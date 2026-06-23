@@ -1,0 +1,25 @@
+Case Study 2
+
+Customer Servicing Architecture
+
+Based on: Customer One + FSC Servicing
+
+Architecture Question
+
+How do we create a consistent servicing experience regardless of channel?
+
+Include
+
+* Contact Centre
+* Branch
+* Digital
+* Relationship Manager
+
+Architecture Outcome
+
+Shows:
+
+* Case Management
+* Omnichannel
+* Workflow
+* Service Operations
