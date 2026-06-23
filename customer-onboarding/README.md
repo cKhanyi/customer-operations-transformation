@@ -3,7 +3,7 @@
 ## Problem Statement
 - Customer onboarding is often treated as a front-end experience rather than an end-to-end business capability. While customers experience a single onboarding journey, successful onboarding requires coordination between customer channels, operational teams, compliance functions, information systems, and servicing capabilities.
 
-The challenge is to design an onboarding capability that balances customer experience, operational efficiency, regulatory compliance, and long-term servicing readiness.
+- The challenge is to design an onboarding capability that balances customer experience, operational efficiency, regulatory compliance, and long-term servicing readiness.
 
 ## Business Context
 - This case study is informed by banking transformation initiatives involving customer onboarding, lending, and customer value proposition programmes.
