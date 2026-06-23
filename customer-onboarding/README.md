@@ -21,23 +21,23 @@ The objective is to enable customers to move seamlessly from application through
 8. Servicing relationship is established
    
 ## Business Capabilities
-- Customer Acquisition
+### Customer Acquisition
 
 Ability to attract and convert prospective customers.
 
-Customer Onboarding
+### Customer Onboarding
 
 Ability to capture, validate, assess, and activate customer relationships.
 
-Risk & Compliance
+### Risk & Compliance
 
 Ability to perform regulatory and policy checks before activation.
 
-Fulfilment
+### Fulfilment
 
 Ability to provision products and services.
 
-Customer Servicing
+### Customer Servicing
 
 Ability to support customers after onboarding.
 
