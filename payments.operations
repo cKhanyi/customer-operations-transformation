@@ -1,0 +1,26 @@
+Case Study 3
+
+Payments Operations Architecture
+
+Based on: Multiple Payment Instructions
+
+Architecture Question
+
+How do we manage payment setup, approval, servicing, and exception handling at scale?
+
+Include
+
+* Customer Request
+* Validation
+* Approval
+* Processing
+* Exception Management
+
+Architecture Outcome
+
+Shows:
+
+* Payments Operations
+* Workflow Architecture
+* Operational Controls
+* Governance
