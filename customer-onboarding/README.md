@@ -11,7 +11,7 @@ The challenge is to design an onboarding capability that balances customer exper
 The objective is to enable customers to move seamlessly from application through approval, fulfilment, and servicing while maintaining operational control and compliance requirements.
 
 ## Customer Journey
-- 1. Customer identifies a need
+1. Customer identifies a need
 2. Customer submits application
 3. Information is captured and validated
 4. Compliance and risk checks are performed
