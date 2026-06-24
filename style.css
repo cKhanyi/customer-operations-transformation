@@ -35,6 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 10px 28px rgba(6, 26, 47, 0.18);
 }
 
 .nav-brand {
@@ -55,17 +56,22 @@ body {
   border-radius: 999px;
   font-size: 14px;
   transition: 0.25s ease;
+  border: 1px solid rgba(201, 162, 74, 0.35);
 }
 
 .nav-links a:hover {
   background: var(--gold);
   color: var(--navy);
+  border-color: var(--gold);
 }
 
 .hero {
   background: linear-gradient(135deg, var(--navy), var(--navy-soft));
   color: white;
   padding: 90px 10%;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
 }
 
 .badge {
@@ -87,6 +93,44 @@ body {
   max-width: 780px;
   font-size: 18px;
   color: #dbe4ef;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.hero-actions a {
+  border-bottom: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.button.primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button.secondary {
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(0,0,0,0.18);
 }
 
 main {
@@ -124,11 +168,12 @@ h2 {
   border-radius: 18px;
   padding: 24px;
   transition: 0.25s ease;
+  cursor: pointer;
 }
 
 .card:hover,
 .tech-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 0 16px 34px rgba(6, 26, 47, 0.12);
   border-color: rgba(201, 162, 74, 0.45);
 }
@@ -194,7 +239,8 @@ a {
   background: var(--navy);
   padding: 18px 0;
   border-radius: 18px;
-  margin-bottom: 28px;
+  max-width: 1160px;
+  margin: 0 auto 28px;
 }
 
 .marquee-track {
@@ -220,8 +266,13 @@ a {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 footer {
@@ -254,81 +305,4 @@ footer {
   .tech-grid {
     grid-template-columns: 1fr;
   }
-/* HERO POLISH */
-.hero {
-  min-height: 430px;
-  display: flex;
-  align-items: center;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 26px;
-  flex-wrap: wrap;
-}
-
-.hero-actions a {
-  border-bottom: none;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 20px;
-  border-radius: 999px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.button.primary {
-  background: var(--gold);
-  color: var(--navy);
-}
-
-.button.secondary {
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.08);
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 26px rgba(0,0,0,0.18);
-}
-
-/* MAKE NAV FEEL MORE PREMIUM */
-.navbar {
-  box-shadow: 0 10px 28px rgba(6, 26, 47, 0.18);
-}
-
-.nav-links a {
-  border: 1px solid rgba(201, 162, 74, 0.35);
-}
-
-.nav-links a:hover {
-  background: var(--gold);
-  color: var(--navy);
-  border-color: var(--gold);
-}
-
-/* CARD HOVER IMPROVEMENT */
-.card,
-.tech-card {
-  cursor: pointer;
-}
-
-.card:hover,
-.tech-card:hover {
-  transform: translateY(-6px);
-}
-
-/* MARQUEE FIX */
-.logo-marquee {
-  max-width: 1160px;
-  margin: 0 auto 28px;
-}
-  
 }
