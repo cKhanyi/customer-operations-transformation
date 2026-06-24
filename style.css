@@ -519,6 +519,299 @@ details p {
   color: var(--ink);
 }
 
+.artefact-overlay-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(7,20,33,0.84), rgba(7,20,33,0.84)),
+    var(--cream);
+  padding: 50px 24px;
+}
+
+.artefact-showcase {
+  max-width: 1180px;
+  margin: 0 auto;
+  background: var(--paper);
+  position: relative;
+  box-shadow: 0 34px 90px rgba(0,0,0,0.35);
+}
+
+.artefact-close {
+  position: fixed;
+  top: 26px;
+  right: 34px;
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: none;
+  z-index: 8000;
+}
+
+.artefact-close:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.artefact-hero {
+  padding: 70px 70px 40px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(184,154,94,0.22), transparent 26%),
+    linear-gradient(120deg, #071421, #102f4f);
+  color: white;
+}
+
+.artefact-hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 0 0 24px;
+  max-width: 920px;
+}
+
+.artefact-hero p {
+  color: #d8e0ea;
+  max-width: 840px;
+  font-size: 19px;
+}
+
+.artefact-question {
+  margin: 0;
+  padding: 42px 70px;
+  background: var(--ink);
+  color: white;
+  border-top: 1px solid rgba(184,154,94,0.28);
+  border-bottom: 1px solid rgba(184,154,94,0.28);
+}
+
+.artefact-question span {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.artefact-question h2 {
+  color: white;
+  margin: 14px 0 0;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -1.6px;
+}
+
+.artefact-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.artefact-metrics article {
+  padding: 34px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  background: white;
+}
+
+.artefact-metrics article:last-child {
+  border-right: none;
+}
+
+.artefact-metrics strong {
+  display: block;
+  color: var(--ink);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.artefact-metrics span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.artefact-section {
+  padding: 60px 70px;
+}
+
+.focus-grid,
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.focus-card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 28px;
+  transition: 0.25s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 22px 44px rgba(7,20,33,0.10);
+}
+
+.focus-symbol {
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+
+.focus-card h3 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.focus-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.journey-progress-premium {
+  height: 10px;
+  background: #e8edf3;
+  overflow: hidden;
+  margin: 26px 0 34px;
+}
+
+.journey-progress-premium div {
+  height: 100%;
+  width: 12.5%;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+
+.journey-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.timeline-step {
+  border: 1px solid var(--line);
+  background: white;
+  text-align: left;
+  padding: 24px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.timeline-step:hover,
+.timeline-step.active {
+  border-color: var(--gold);
+  background: #fffaf2;
+  transform: translateY(-4px);
+}
+
+.timeline-step span {
+  width: 42px;
+  height: 42px;
+  background: var(--ink);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.timeline-step.active span {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.timeline-step h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.timeline-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.architecture-insight {
+  margin-top: 28px;
+  padding: 26px;
+  background: var(--ink);
+  border-left: 6px solid var(--gold);
+}
+
+.architecture-insight span {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.architecture-insight p {
+  color: white;
+  margin: 10px 0 0;
+  font-size: 17px;
+}
+
+.dark-artefact-band {
+  background: var(--ink);
+  color: white;
+}
+
+.dark-artefact-band h2 {
+  color: white;
+}
+
+.insight-grid article {
+  border: 1px solid rgba(184,154,94,0.38);
+  padding: 20px;
+  color: white;
+  font-weight: 900;
+  background: rgba(255,255,255,0.04);
+}
+
+@media (max-width: 980px) {
+  .focus-grid,
+  .insight-grid,
+  .journey-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artefact-hero,
+  .artefact-question,
+  .artefact-section {
+    padding: 42px 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .artefact-metrics,
+  .focus-grid,
+  .insight-grid,
+  .journey-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   .journey-board {
     grid-template-columns: 1fr;
