@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Customer Journey Map | Universal Loan Onboarding</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css?v=10">
+</head>
+
+<body>
+
+<div class="modal-page">
+
+  <section class="artefact-modal-card modal-page-card">
+
+    <a href="overview.html" class="artefact-modal-close">×</a>
+
+    <div class="artefact-modal-grid">
+
+      <div class="artefact-modal-left">
+        <span class="modal-kicker">Artefact 01</span>
+        <h2>Customer Journey Map</h2>
+
+        <p>
+          This artefact maps the end-to-end customer journey from need identification
+          to onboarding, fulfilment, approval, and servicing readiness.
+        </p>
+
+        <div class="journey-summary">
+          <div>
+            <strong>8</strong>
+            <span>Journey Stages</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Focus Areas</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>Operating Model</span>
+          </div>
+        </div>
+
+        <span class="modal-kicker">Key focus areas</span>
+
+        <div class="focus-list">
+          <div class="focus-item">
+            <div class="focus-icon">👥</div>
+            <div>
+              <h4>Customer Touchpoints</h4>
+              <p>Where customers interact across channels.</p>
+            </div>
+          </div>
+
+          <div class="focus-item">
+            <div class="focus-icon">🔍</div>
+            <div>
+              <h4>Journey Steps</h4>
+              <p>Activities, decisions, and transitions.</p>
+            </div>
+          </div>
+
+          <div class="focus-item">
+            <div class="focus-icon">⚠️</div>
+            <div>
+              <h4>Pain Points</h4>
+              <p>Friction, delays, and operational rework.</p>
+            </div>
+          </div>
+
+          <div class="focus-item">
+            <div class="focus-icon">✅</div>
+            <div>
+              <h4>Outcome Alignment</h4>
+              <p>Ensures fulfilment and servicing readiness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="artefact-modal-right">
+        <span class="modal-kicker">Interactive journey</span>
+
+        <div class="journey-progress">
+          <div id="progressFill"></div>
+        </div>
+
+        <div class="journey-list">
+
+          <button class="journey-row active" data-step="1">
+            <span>01</span>
+            <div>
+              <h4>Customer Need</h4>
+              <p>Customer expresses a lending need or funding requirement.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="2">
+            <span>02</span>
+            <div>
+              <h4>Banker Discovery</h4>
+              <p>Banker explores needs, product suitability, and relationship context.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="3">
+            <span>03</span>
+            <div>
+              <h4>Eligibility Guidance</h4>
+              <p>Guidance prevents weak submissions and improves readiness.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="4">
+            <span>04</span>
+            <div>
+              <h4>Document Request</h4>
+              <p>Customer is guided on required supporting documents.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="5">
+            <span>05</span>
+            <div>
+              <h4>Case Creation</h4>
+              <p>Case management anchors visibility, routing, and tracking.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="6">
+            <span>06</span>
+            <div>
+              <h4>Sales Preparation</h4>
+              <p>Request is packaged into a fulfilment-ready submission.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="7">
+            <span>07</span>
+            <div>
+              <h4>Fulfilment Validation</h4>
+              <p>Submission is validated against rules, limits, risk checks, and approvals.</p>
+            </div>
+          </button>
+
+          <button class="journey-row" data-step="8">
+            <span>08</span>
+            <div>
+              <h4>Servicing Readiness</h4>
+              <p>Customer transitions into ongoing servicing and support.</p>
+            </div>
+          </button>
+
+        </div>
+
+        <div class="journey-insight" id="journeyInsight">
+          <strong>Current focus:</strong>
+          Customer need must be understood before the bank can design the right onboarding path.
+        </div>
+
+        <a href="overview.html" class="modal-button">Close</a>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+  const rows = document.querySelectorAll(".journey-row");
+  const progressFill = document.getElementById("progressFill");
+  const insight = document.getElementById("journeyInsight");
+
+  const insights = {
+    1: "Customer need must be understood before the bank can design the right onboarding path.",
+    2: "Banker discovery converts customer intent into product, eligibility, and operational context.",
+    3: "Eligibility guidance improves submission quality before fulfilment teams receive the request.",
+    4: "Clear document requests reduce back-and-forth, delays, and incomplete submissions.",
+    5: "Case creation creates visibility, ownership, routing, and operational traceability.",
+    6: "Sales preparation packages the request into a fulfilment-ready operating artefact.",
+    7: "Fulfilment validation protects the bank through rules, limits, risk checks, and approval controls.",
+    8: "Servicing readiness ensures onboarding does not end at approval but continues into support."
+  };
+
+  rows.forEach(row => {
+    row.addEventListener("click", () => {
+      rows.forEach(item => item.classList.remove("active"));
+      row.classList.add("active");
+
+      const step = Number(row.dataset.step);
+      const percent = (step / 8) * 100;
+
+      progressFill.style.width = percent + "%";
+      insight.innerHTML = "<strong>Current focus:</strong> " + insights[step];
+    });
+  });
+
+  progressFill.style.width = "12.5%";
+</script>
+
+</body>
+</html>
