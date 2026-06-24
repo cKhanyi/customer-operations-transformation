@@ -420,6 +420,64 @@ details p {
   font-weight: 900;
   margin-bottom: 14px;
 }
+.journey-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.journey-stage {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 30px;
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.journey-stage:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 22px 44px rgba(7,20,33,0.10);
+}
+
+.stage-number {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  color: var(--gold);
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+
+.journey-stage h3 {
+  font-size: 24px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.journey-stage p {
+  color: var(--muted);
+}
+
+.journey-stage ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: #344054;
+}
+
+.journey-stage li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 860px) {
+  .journey-board {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* MARQUEE */
 .marquee {
