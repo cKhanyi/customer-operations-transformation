@@ -254,4 +254,81 @@ footer {
   .tech-grid {
     grid-template-columns: 1fr;
   }
+/* HERO POLISH */
+.hero {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.hero-actions a {
+  border-bottom: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.button.primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button.secondary {
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(0,0,0,0.18);
+}
+
+/* MAKE NAV FEEL MORE PREMIUM */
+.navbar {
+  box-shadow: 0 10px 28px rgba(6, 26, 47, 0.18);
+}
+
+.nav-links a {
+  border: 1px solid rgba(201, 162, 74, 0.35);
+}
+
+.nav-links a:hover {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+/* CARD HOVER IMPROVEMENT */
+.card,
+.tech-card {
+  cursor: pointer;
+}
+
+.card:hover,
+.tech-card:hover {
+  transform: translateY(-6px);
+}
+
+/* MARQUEE FIX */
+.logo-marquee {
+  max-width: 1160px;
+  margin: 0 auto 28px;
+}
+  
 }
