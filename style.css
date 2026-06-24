@@ -353,6 +353,42 @@ summary::after {
   color: var(--gold);
   font-size: 22px;
 }
+.case-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 16px 22px;
+  background: var(--gold);
+  color: var(--ink);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: none;
+  box-shadow: 0 14px 34px rgba(184,154,94,0.28);
+  transition: all 0.25s ease;
+}
+
+.case-cta span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: var(--ink);
+  color: white;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.case-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(184,154,94,0.36);
+}
+
+.case-cta:hover span {
+  transform: translateX(4px);
+}
 
 details[open] summary::after {
   content: "−";
