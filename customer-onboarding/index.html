@@ -1,244 +1,1883 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Universal Loan Customer Onboarding | Siya Khanyi</title>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css?v=7">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Universal Loan Architecture | Customer Onboarding, Operations & Integration
+  </title>
+
+  <meta
+    name="description"
+    content="Universal Loan architecture case study by Siya Khanyi exploring customer onboarding, capability mapping, object modelling, operational workflows, service analysis, solution architecture and a conceptual Flowgear iPaaS integration extension."
+  >
+
+  <meta
+    name="keywords"
+    content="Customer Onboarding Architecture, Solution Architecture, Integration Architecture, Capability Mapping, Object Modelling, API Analysis, Service Architecture, Flowgear, iPaaS, Banking Transformation"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../style.css?v=7"
+  >
+
 </head>
+
 
 <body>
 
+
+<!-- ============================================================
+CASE STUDY NAVIGATION
+Universal Loan Customer Onboarding Architecture
+============================================================ -->
+
 <nav class="navbar">
-  <div class="nav-brand">Siya Khanyi</div>
+
+  <div class="nav-brand">
+    Siya Khanyi
+  </div>
+
 
   <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="#overview">Overview</a>
-    <a href="#artefacts">Artefacts</a>
-    <a href="#architecture">Architecture</a>
-    <a href="#outcomes">Outcomes</a>
+
+    <a href="../index.html">
+      Portfolio
+    </a>
+
+    <a href="#architecture-question">
+      Problem
+    </a>
+
+    <a href="#analysis-model">
+      Analysis
+    </a>
+
+    <a href="#artefacts">
+      Artefacts
+    </a>
+
+    <a href="#architecture">
+      Architecture
+    </a>
+
+    <a href="flowgear-integration-extension.html">
+      Flowgear Extension
+    </a>
+
+    <a href="#outcomes">
+      Outcomes
+    </a>
+
   </div>
+
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <span class="eyebrow">Case Study 01</span>
 
-    <h1>Universal Loan Customer Onboarding</h1>
+
+<!-- ============================================================
+CASE STUDY HERO
+============================================================ -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <span class="eyebrow">
+      Case Study 01 · Customer & Operations Architecture
+    </span>
+
+
+    <h1>
+      Universal Loan Customer Onboarding
+    </h1>
+
 
     <p>
-      Customer and operations architecture case study exploring how a fragmented lending
-      onboarding process can be redesigned into an end-to-end banking capability.
+      Reframing a fragmented lending onboarding process
+      as an end-to-end enterprise capability connecting
+      customer intent, banker activity, operational workflow,
+      information, business rules, controls,
+      services and technology.
     </p>
 
+
     <div class="hero-actions">
-      <a class="button primary" href="#artefacts">Explore Artefacts</a>
-      <a class="button secondary" href="../index.html">Back to Portfolio</a>
+
+      <a
+        class="button primary"
+        href="#artefacts"
+      >
+        Explore Architecture Artefacts
+      </a>
+
+
+      <a
+        class="button secondary"
+        href="flowgear-integration-extension.html"
+      >
+        Explore Flowgear Extension
+      </a>
+
+
+      <a
+        class="button secondary"
+        href="../index.html"
+      >
+        Back to Portfolio
+      </a>
+
     </div>
+
   </div>
+
 </header>
+
+
 
 <main>
 
-<section class="panel" id="overview">
-  <span class="section-kicker">Architecture Question</span>
-  <h2>How do we onboard customers across channels while maintaining compliance, servicing readiness, and operational efficiency?</h2>
+
+<!-- ============================================================
+ARCHITECTURE QUESTION
+============================================================ -->
+
+<section
+  class="panel"
+  id="architecture-question"
+  aria-labelledby="architecture-question-heading"
+>
+
+  <span class="section-kicker">
+    Architecture Question
+  </span>
+
+
+  <h2 id="architecture-question-heading">
+    How do we turn fragmented lending activity into one coherent onboarding capability?
+  </h2>
+
 
   <p>
-    The Universal Loan onboarding journey required alignment across customer discovery,
-    banker enablement, eligibility guidance, fulfilment controls, credit exceptions,
-    compliance requirements, Salesforce case management, and long-term servicing readiness.
+    The problem was larger than the customer interface.
+    Successful onboarding required alignment across
+    product guidance, banker enablement, eligibility,
+    customer information, KYC/FICA,
+    document readiness, credit and risk,
+    case management, fulfilment,
+    legacy validation and servicing readiness.
   </p>
 
+
+  <p>
+    The architecture therefore needed to answer
+    not only what the customer or banker sees,
+    but which capabilities perform the work,
+    what information is required,
+    which systems and services support each step,
+    who owns exceptions,
+    and how the customer becomes ready for ongoing servicing.
+  </p>
+
+
   <div class="flow">
-    <span>Customer Acquisition</span>
-    <span>Onboarding</span>
-    <span>KYC Thinking</span>
-    <span>Workflow Design</span>
-    <span>Customer Operations</span>
+
+    <span>
+      Customer Need
+    </span>
+
+    <span>
+      Product Guidance
+    </span>
+
+    <span>
+      Eligibility
+    </span>
+
+    <span>
+      KYC / FICA
+    </span>
+
+    <span>
+      Documents
+    </span>
+
+    <span>
+      Credit
+    </span>
+
+    <span>
+      Fulfilment
+    </span>
+
+    <span>
+      Servicing
+    </span>
+
   </div>
+
 </section>
 
-<section class="panel" id="artefacts">
-  <span class="section-kicker">Case Study Artefacts</span>
-  <h2>Architecture documentation</h2>
+
+
+<!-- ============================================================
+PROBLEM DECOMPOSITION
+============================================================ -->
+
+<section
+  class="case-section"
+  id="analysis-model"
+  aria-labelledby="analysis-model-heading"
+>
+
+  <div class="case-copy">
+
+    <span class="section-kicker gold">
+      Solution Analysis
+    </span>
+
+
+    <h2 id="analysis-model-heading">
+      Analyse the operating model before choosing the solution.
+    </h2>
+
+
+    <p>
+      The onboarding journey was decomposed across
+      business capability, process, people,
+      information objects, services and systems.
+    </p>
+
+
+    <p>
+      This makes it possible to distinguish
+      a genuine technology gap
+      from a process, information,
+      ownership or capability problem.
+    </p>
+
+  </div>
+
+
+
+  <div class="case-layout">
+
+
+    <article class="featured-case">
+
+      <span class="case-status">
+        Architecture Analysis Model
+      </span>
+
+
+      <h3>
+        Business intent → technical responsibility
+      </h3>
+
+
+      <p>
+        Each proposed change is considered in the context
+        of the capability it enables,
+        the people and process affected,
+        the information required,
+        the services already available
+        and the systems responsible for execution.
+      </p>
+
+
+      <div class="flow dark-flow">
+
+        <span>
+          Business Outcome
+        </span>
+
+        <span>
+          Capability
+        </span>
+
+        <span>
+          Process
+        </span>
+
+        <span>
+          Actor
+        </span>
+
+        <span>
+          Object
+        </span>
+
+        <span>
+          Service / API
+        </span>
+
+        <span>
+          System
+        </span>
+
+        <span>
+          Solution
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <div class="roadmap">
+
+
+      <details open>
+
+        <summary>
+          Capability Mapping
+        </summary>
+
+        <p>
+          Identify what the organisation needs
+          to be capable of across discovery,
+          onboarding, compliance,
+          credit, fulfilment and servicing.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Process & Actor Analysis
+        </summary>
+
+        <p>
+          Understand the responsibilities of the customer,
+          banker, sales support, fulfilment,
+          credit, risk, compliance,
+          product and technology teams.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Object Modelling
+        </summary>
+
+        <p>
+          Clarify the information entities required
+          by the solution and their relationships
+          before deciding which platform
+          should own or manipulate them.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          API & Service Analysis
+        </summary>
+
+        <p>
+          Review existing services and platform capabilities
+          to determine what can be reused,
+          what behaviour already exists
+          and where new capability may be required.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Solution Option Evaluation
+        </summary>
+
+        <p>
+          Compare process change,
+          platform configuration,
+          service reuse,
+          orchestration,
+          automation and new technical capability
+          against delivery effort,
+          risk, cost and future scalability.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+CASE STUDY ARTEFACTS
+============================================================ -->
+
+<section
+  class="panel"
+  id="artefacts"
+  aria-labelledby="artefacts-heading"
+>
+
+  <span class="section-kicker">
+    Architecture Documentation
+  </span>
+
+
+  <h2 id="artefacts-heading">
+    Case study artefacts
+  </h2>
+
+
+  <p>
+    The case is documented from business context
+    through process, domain and solution architecture,
+    with the Flowgear extension adding
+    an explicit integration architecture lens.
+  </p>
+
 
   <div class="domain-grid">
 
-    <article class="domain-card">
-      <span class="number">01</span>
-      <h3>Case Study Overview</h3>
-      <p>Problem statement, scope, operating context, architecture question, and portfolio outcome.</p>
-     <a href="overview.html">Open Overview →</a>
-</a>
-    </article>
+
+    <!-- 01 -->
 
     <article class="domain-card">
-      <span class="number">02</span>
-      <h3>Universal Loan Wealth</h3>
-      <p>Contextual breakdown of lending, wealth banking, banker workflows, and customer onboarding considerations.</p>
-      <a href="3. Universal Loan Wealth.md">Open document</a>
-    </article>
 
-    <article class="domain-card">
-      <span class="number">03</span>
-      <h3>Domain Architecture Diagram</h3>
-      <p>Visual representation of the customer, operations, risk, compliance, Salesforce, and core banking domains.</p>
-      <a href="4. Domain Architecture Diagram .pdf">View diagram</a>
-    </article>
+      <span class="number">
+        01
+      </span>
 
-    <article class="domain-card">
-      <span class="number">04</span>
-      <h3>Onboarding Solution Design</h3>
-      <p>Solution design view showing how onboarding capabilities, workflows, controls, and systems connect.</p>
-      <a href="5. Onboarding Solution Design .PNG">View design</a>
-    </article>
-
-    <article class="domain-card">
-      <span class="number">05</span>
-      <h3>Onboarding Flow Chart</h3>
-      <p>End-to-end process flow from customer need through fulfilment validation and servicing readiness.</p>
-      <a href="6. Universal Loan onboarding Flow Chart.pdf">View flow</a>
-    </article>
-
-  </div>
-</section>
-
-<section class="case-section" id="architecture">
-  <div class="case-copy">
-    <span class="section-kicker gold">Architecture View</span>
-    <h2>What the solution connects</h2>
-    <p>
-      The solution reframes onboarding as a business capability rather than a front-end journey.
-      It connects customer intent, banker activity, Salesforce workflow, document readiness,
-      compliance controls, credit decisions, fulfilment validation, and operational servicing.
-    </p>
-  </div>
-
-  <div class="case-layout">
-    <article class="featured-case">
-      <span class="case-status">Featured Architecture Lens</span>
-      <h3>Customer + Operations + Controls</h3>
+      <h3>
+        Case Study Overview
+      </h3>
 
       <p>
-        The architecture shows how customer experience depends on operational clarity:
-        who owns the step, what information is required, which controls apply, what systems
-        validate the request, and how the journey becomes service-ready after fulfilment.
+        Problem statement, operating context,
+        architecture question, scope
+        and intended transformation outcome.
       </p>
 
-      <div class="flow dark-flow">
-        <span>Customer Intent</span>
-        <span>Eligibility</span>
-        <span>Salesforce Case</span>
-        <span>Documents</span>
-        <span>Credit</span>
-        <span>Fulfilment</span>
-        <span>Servicing</span>
-      </div>
+      <a href="overview.html">
+        Open Overview →
+      </a>
+
     </article>
 
-    <div class="roadmap">
-      <details open>
-        <summary>Capability Map</summary>
-        <p>Breaks onboarding into reusable business capabilities across discovery, eligibility, KYC, fulfilment, credit, controls, and servicing.</p>
-      </details>
 
-      <details>
-        <summary>Business Process Flow</summary>
-        <p>Shows the end-to-end movement from customer need through banker action, validation, exception handling, and closure.</p>
-      </details>
 
-      <details>
-        <summary>Stakeholder Map</summary>
-        <p>Clarifies how client, banker, sales support, fulfilment, credit, risk, compliance, product, and technology teams interact.</p>
-      </details>
+    <!-- 02 -->
 
-      <details>
-        <summary>Architecture Decisions</summary>
-        <p>Documents trade-offs around Salesforce case management, knowledge articles, record types, document readiness, and tactical delivery.</p>
-      </details>
-    </div>
+    <article class="domain-card">
+
+      <span class="number">
+        02
+      </span>
+
+      <h3>
+        Universal Loan Wealth Context
+      </h3>
+
+      <p>
+        Lending and wealth context,
+        banker activity,
+        operational dependencies
+        and onboarding considerations.
+      </p>
+
+      <a href="3. Universal Loan Wealth.md">
+        Open Context →
+      </a>
+
+    </article>
+
+
+
+    <!-- 03 -->
+
+    <article class="domain-card">
+
+      <span class="number">
+        03
+      </span>
+
+      <h3>
+        Domain Architecture Diagram
+      </h3>
+
+      <p>
+        Visual representation of
+        customer, operations,
+        risk, compliance,
+        platform and core-banking domains.
+      </p>
+
+      <a href="4. Domain Architecture Diagram .pdf">
+        View Domain Architecture →
+      </a>
+
+    </article>
+
+
+
+    <!-- 04 -->
+
+    <article class="domain-card">
+
+      <span class="number">
+        04
+      </span>
+
+      <h3>
+        Onboarding Solution Design
+      </h3>
+
+      <p>
+        Solution view showing how
+        onboarding capabilities,
+        workflow, controls
+        and systems connect.
+      </p>
+
+      <a href="5. Onboarding Solution Design .PNG">
+        View Solution Design →
+      </a>
+
+    </article>
+
+
+
+    <!-- 05 -->
+
+    <article class="domain-card">
+
+      <span class="number">
+        05
+      </span>
+
+      <h3>
+        End-to-End Onboarding Flow
+      </h3>
+
+      <p>
+        Process movement from
+        customer need
+        through validation,
+        decisioning,
+        fulfilment
+        and servicing readiness.
+      </p>
+
+      <a href="6. Universal Loan onboarding Flow Chart.pdf">
+        View Process Flow →
+      </a>
+
+    </article>
+
+
+
+    <!-- 06 -->
+
+    <article class="domain-card">
+
+      <span class="number">
+        06
+      </span>
+
+      <h3>
+        Flowgear Integration Architecture Extension
+      </h3>
+
+      <p>
+        Conceptual iPaaS extension exploring
+        service orchestration,
+        system ownership,
+        object movement,
+        API boundaries,
+        transformation,
+        exception handling
+        and operational-state management.
+      </p>
+
+      <a href="flowgear-integration-extension.html">
+        Explore Flowgear Extension →
+      </a>
+
+    </article>
+
+
   </div>
+
 </section>
 
-<section class="panel" id="outcomes">
-  <span class="section-kicker">Portfolio Outcome</span>
-  <h2>What this case study demonstrates</h2>
+
+
+<!-- ============================================================
+BUSINESS CAPABILITY ARCHITECTURE
+============================================================ -->
+
+<section
+  class="panel"
+  id="capabilities"
+  aria-labelledby="capabilities-heading"
+>
+
+  <span class="section-kicker">
+    Capability Architecture
+  </span>
+
+
+  <h2 id="capabilities-heading">
+    Onboarding is a chain of reusable business capabilities.
+  </h2>
+
 
   <div class="domain-grid two">
 
-    <article class="domain-card">
-      <h3>Customer Acquisition</h3>
-      <p>Shows how onboarding starts before fulfilment, through clear product guidance, eligibility understanding, and banker enablement.</p>
-    </article>
 
     <article class="domain-card">
-      <h3>Operational Architecture</h3>
-      <p>Connects people, process, controls, information, systems, and ownership into a coherent operating model.</p>
+
+      <h3>
+        Product Discovery & Guidance
+      </h3>
+
+      <p>
+        Help the customer and banker
+        understand the product,
+        suitability,
+        requirements
+        and next action.
+      </p>
+
     </article>
 
-    <article class="domain-card">
-      <h3>KYC & Compliance Thinking</h3>
-      <p>Positions compliance as embedded journey logic rather than a late-stage operational blocker.</p>
-    </article>
+
 
     <article class="domain-card">
-      <h3>Workflow & Case Design</h3>
-      <p>Demonstrates how Salesforce case management can support visibility, routing, validation, and servicing readiness.</p>
+
+      <h3>
+        Eligibility
+      </h3>
+
+      <p>
+        Determine whether
+        customer and product conditions
+        support progression
+        before unnecessary fulfilment effort begins.
+      </p>
+
     </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Customer & Compliance
+      </h3>
+
+      <p>
+        Capture and verify
+        identity and customer information
+        while embedding KYC/FICA
+        into the journey.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Document Readiness
+      </h3>
+
+      <p>
+        Determine what evidence is required,
+        what has been received,
+        what is valid
+        and what remains outstanding.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Credit & Risk Decisioning
+      </h3>
+
+      <p>
+        Evaluate risk,
+        approval conditions,
+        exceptions
+        and decision outcomes.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Fulfilment
+      </h3>
+
+      <p>
+        Complete validation,
+        product provisioning,
+        disbursement
+        and operational closure.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Case & Work Management
+      </h3>
+
+      <p>
+        Track ownership,
+        tasks,
+        status,
+        outstanding actions
+        and operational exceptions.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Servicing Readiness
+      </h3>
+
+      <p>
+        Ensure the customer,
+        product and servicing relationship
+        are operationally ready
+        after fulfilment.
+      </p>
+
+    </article>
+
 
   </div>
+
 </section>
+
+
+
+<!-- ============================================================
+OBJECT MODEL
+============================================================ -->
+
+<section
+  class="panel"
+  id="object-model"
+  aria-labelledby="object-model-heading"
+>
+
+  <span class="section-kicker">
+    Information Architecture
+  </span>
+
+
+  <h2 id="object-model-heading">
+    Model the business objects before mapping them to systems.
+  </h2>
+
+
+  <p>
+    The architecture separates the meaning
+    of an information object from the technology
+    currently used to store or process it.
+    This is important when identifying
+    service boundaries, ownership and integration responsibilities.
+  </p>
+
+
+  <div class="domain-grid two">
+
+
+    <article class="domain-card">
+
+      <h3>
+        Customer
+      </h3>
+
+      <p>
+        Identity,
+        profile,
+        relationship
+        and customer reference information.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Product
+      </h3>
+
+      <p>
+        Lending proposition,
+        terms,
+        rules,
+        requirements
+        and product conditions.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Application
+      </h3>
+
+      <p>
+        Customer request,
+        selected product,
+        current onboarding state
+        and application progression.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Eligibility Result
+      </h3>
+
+      <p>
+        Structured evaluation outcome
+        determining whether
+        the customer can proceed,
+        be referred
+        or should stop.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Compliance Result
+      </h3>
+
+      <p>
+        Verification,
+        regulatory
+        and policy outcome
+        used by the onboarding process.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Document
+      </h3>
+
+      <p>
+        Required evidence,
+        receipt status,
+        validation state
+        and document readiness.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Credit Decision
+      </h3>
+
+      <p>
+        Approval,
+        decline,
+        conditions,
+        risk assessment
+        and exception reason.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Case
+      </h3>
+
+      <p>
+        Operational work container
+        containing ownership,
+        tasks,
+        status,
+        exceptions
+        and next action.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+SOLUTION ARCHITECTURE
+============================================================ -->
+
+<section
+  class="case-section"
+  id="architecture"
+  aria-labelledby="architecture-heading"
+>
+
+  <div class="case-copy">
+
+    <span class="section-kicker gold">
+      Solution Architecture View
+    </span>
+
+
+    <h2 id="architecture-heading">
+      What the end-to-end solution must connect.
+    </h2>
+
+
+    <p>
+      Customer experience depends on
+      much more than the interaction layer.
+      The solution connects customer intent,
+      people, business rules,
+      information, workflow,
+      controls, services,
+      systems and operational ownership.
+    </p>
+
+  </div>
+
+
+
+  <div class="case-layout">
+
+
+    <article class="featured-case">
+
+      <span class="case-status">
+        End-to-End Architecture Lens
+      </span>
+
+
+      <h3>
+        Customer + Operations + Information + Technology
+      </h3>
+
+
+      <p>
+        Each stage asks:
+        who owns the work,
+        what information is required,
+        which rules or controls apply,
+        what capability performs the action,
+        what service or system enables it,
+        and what happens when the normal path fails?
+      </p>
+
+
+      <div class="flow dark-flow">
+
+        <span>
+          Customer Intent
+        </span>
+
+        <span>
+          Eligibility
+        </span>
+
+        <span>
+          Case
+        </span>
+
+        <span>
+          Compliance
+        </span>
+
+        <span>
+          Documents
+        </span>
+
+        <span>
+          Credit
+        </span>
+
+        <span>
+          Fulfilment
+        </span>
+
+        <span>
+          Servicing
+        </span>
+
+      </div>
+
+
+      <a
+        class="case-cta"
+        href="flowgear-integration-extension.html"
+      >
+        Extend the Architecture into iPaaS Orchestration
+        <span>→</span>
+      </a>
+
+    </article>
+
+
+
+    <div class="roadmap">
+
+
+      <details open>
+
+        <summary>
+          Business Capability View
+        </summary>
+
+        <p>
+          Decomposes onboarding into
+          reusable capabilities across
+          product guidance,
+          eligibility,
+          compliance,
+          fulfilment,
+          credit
+          and servicing.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Process View
+        </summary>
+
+        <p>
+          Shows the end-to-end movement
+          from customer need
+          through banker action,
+          validation,
+          decisioning,
+          exceptions
+          and completion.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Actor & Ownership View
+        </summary>
+
+        <p>
+          Clarifies interactions
+          between customer,
+          banker,
+          sales support,
+          fulfilment,
+          credit,
+          risk,
+          compliance,
+          product
+          and technology teams.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Object & Information View
+        </summary>
+
+        <p>
+          Identifies the business objects
+          required by the process
+          and separates information ownership
+          from interface presentation.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Service & System View
+        </summary>
+
+        <p>
+          Identifies which existing services,
+          platform capabilities
+          and systems support each
+          part of the operating model.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Integration Architecture Extension
+        </summary>
+
+        <p>
+          Adds a conceptual Flowgear layer
+          to explore service orchestration,
+          API mediation,
+          transformation,
+          exception handling
+          and system decoupling.
+        </p>
+
+        <a href="flowgear-integration-extension.html">
+          Open Flowgear Extension →
+        </a>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+ARCHITECTURE DECISIONS
+============================================================ -->
+
+<section
+  class="panel"
+  id="architecture-decisions"
+  aria-labelledby="architecture-decisions-heading"
+>
+
+  <span class="section-kicker">
+    Architecture Decisions
+  </span>
+
+
+  <h2 id="architecture-decisions-heading">
+    The solution is shaped through explicit trade-offs.
+  </h2>
+
+
+  <div class="roadmap">
+
+
+    <details open>
+
+      <summary>
+        Treat onboarding as a business capability rather than a channel-specific journey
+      </summary>
+
+      <p>
+        The same underlying capabilities
+        should support banker-led,
+        assisted
+        and future digital experiences.
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Separate customer experience concerns from operational workflow concerns
+      </summary>
+
+      <p>
+        A simple front-stage experience
+        should not hide unclear ownership,
+        duplicated work
+        or weak operational controls.
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Reuse existing enterprise capabilities before introducing new ones
+      </summary>
+
+      <p>
+        Existing services,
+        case-management patterns
+        and platform capabilities
+        should be assessed before creating
+        duplicate functionality.
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Establish servicing readiness during onboarding
+      </summary>
+
+      <p>
+        Onboarding is not complete
+        simply because fulfilment succeeded.
+        Customer and product information
+        must support the ongoing servicing relationship.
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Treat compliance as integrated journey logic
+      </summary>
+
+      <p>
+        Compliance requirements should shape
+        information capture,
+        validation
+        and progression
+        rather than appearing as a late-stage blocker.
+      </p>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Separate integration orchestration from system ownership
+      </summary>
+
+      <p>
+        The iPaaS extension explores
+        how systems can remain responsible
+        for their business data
+        while orchestration coordinates
+        activity between them.
+      </p>
+
+    </details>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+FLOWGEAR EXTENSION FEATURE
+============================================================ -->
+
+<section class="case-section">
+
+  <div class="case-copy">
+
+    <span class="section-kicker gold">
+      Integration Architecture Extension
+    </span>
+
+
+    <h2>
+      What changes when the same case is viewed through an iPaaS lens?
+    </h2>
+
+
+    <p>
+      After studying Flowgear,
+      I extended the Universal Loan case
+      to explore how the existing capability,
+      object, service and system analysis
+      could translate into a governed
+      integration architecture.
+    </p>
+
+  </div>
+
+
+
+  <div class="case-layout">
+
+
+    <article class="featured-case">
+
+      <span class="case-status">
+        Conceptual Extension · Not Prior Flowgear Delivery
+      </span>
+
+
+      <h3>
+        Universal Loan + Flowgear
+      </h3>
+
+
+      <p>
+        The extension introduces Flowgear
+        as an orchestration and mediation layer
+        between the colleague-facing case workflow
+        and services supporting eligibility,
+        KYC/FICA,
+        documents,
+        credit/risk,
+        core systems,
+        fulfilment
+        and servicing.
+      </p>
+
+
+      <div class="flow dark-flow">
+
+        <span>
+          Salesforce Case
+        </span>
+
+        <span>
+          Flowgear
+        </span>
+
+        <span>
+          KYC
+        </span>
+
+        <span>
+          Eligibility
+        </span>
+
+        <span>
+          Documents
+        </span>
+
+        <span>
+          Credit
+        </span>
+
+        <span>
+          Core
+        </span>
+
+        <span>
+          Servicing
+        </span>
+
+      </div>
+
+
+      <a
+        class="case-cta"
+        href="flowgear-integration-extension.html"
+      >
+        Open the Integration Architecture Extension
+        <span>→</span>
+      </a>
+
+    </article>
+
+
+
+    <div class="roadmap">
+
+
+      <details open>
+
+        <summary>
+          System Ownership
+        </summary>
+
+        <p>
+          Source systems remain responsible
+          for their business objects
+          rather than turning middleware
+          into another system of record.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Reusable Service Boundaries
+        </summary>
+
+        <p>
+          Eligibility,
+          compliance,
+          document,
+          credit
+          and fulfilment capabilities
+          are considered as reusable services,
+          not journey-specific integrations.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Transformation & Routing
+        </summary>
+
+        <p>
+          Information is mapped,
+          transformed
+          and routed between systems
+          without exposing technical complexity
+          to the banker.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Exception Architecture
+        </summary>
+
+        <p>
+          Timeouts,
+          negative decisions,
+          missing information
+          and technical failures
+          become explicit operational states
+          requiring ownership and recovery.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Proposed POC
+        </summary>
+
+        <p>
+          A small first pilot would validate:
+          onboarding request →
+          Flowgear →
+          eligibility service →
+          decision →
+          operational case update.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+PORTFOLIO OUTCOMES
+============================================================ -->
+
+<section
+  class="panel"
+  id="outcomes"
+  aria-labelledby="outcomes-heading"
+>
+
+  <span class="section-kicker">
+    Portfolio Outcome
+  </span>
+
+
+  <h2 id="outcomes-heading">
+    What this case study demonstrates.
+  </h2>
+
+
+  <div class="domain-grid two">
+
+
+    <article class="domain-card">
+
+      <h3>
+        Customer & Product Thinking
+      </h3>
+
+      <p>
+        Connects customer intent,
+        product guidance
+        and eligibility
+        before operational fulfilment begins.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Capability Architecture
+      </h3>
+
+      <p>
+        Decomposes the service
+        into reusable business capabilities
+        rather than treating each screen
+        or workflow as an isolated solution.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Operational Architecture
+      </h3>
+
+      <p>
+        Connects actors,
+        workflows,
+        ownership,
+        controls,
+        exceptions
+        and servicing readiness.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Object Modelling
+      </h3>
+
+      <p>
+        Separates business information
+        from the systems
+        that currently store,
+        consume
+        or transform it.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        API & Service Analysis
+      </h3>
+
+      <p>
+        Considers existing enterprise services
+        and reusable capabilities
+        before introducing new solution components.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Architecture Decision-Making
+      </h3>
+
+      <p>
+        Makes solution trade-offs visible
+        across customer value,
+        operations,
+        technology,
+        cost,
+        risk
+        and scalability.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Integration Architecture Thinking
+      </h3>
+
+      <p>
+        Extends the case into
+        orchestration,
+        service boundaries,
+        transformation,
+        exception handling
+        and system ownership.
+      </p>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <h3>
+        Business-to-Technology Translation
+      </h3>
+
+      <p>
+        Turns an ambiguous business problem
+        into structured architecture artefacts
+        that business,
+        operations,
+        product
+        and technology teams can evaluate together.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
 
 </main>
 
+
+
+<!-- ============================================================
+CASE STUDY FOOTER
+============================================================ -->
+
 <footer class="site-footer">
+
   <div class="footer-grid">
 
+
     <div class="footer-brand">
-      <h3>Siya Khanyi</h3>
-      <p>Customer & Operations Architecture Portfolio</p>
+
+      <h3>
+        Siya Khanyi
+      </h3>
+
       <p>
-        Information architecture, service design, operating model thinking,
-        and customer operations transformation.
+        Customer & Operations Architecture Portfolio
       </p>
+
+      <p>
+        Customer,
+        operations,
+        information,
+        services
+        and technology translated
+        into scalable enterprise solutions.
+      </p>
+
     </div>
 
-    <div class="footer-column">
-      <h4>Portfolio</h4>
-      <a href="../index.html">Home</a>
-      <a href="../index.html#philosophy">Architecture Philosophy</a>
-      <a href="../index.html#domains">Architecture Domains</a>
-      <a href="../index.html#case-studies">Case Studies</a>
-      <a href="../index.html#technology-alignment">Technology Alignment</a>
-    </div>
+
 
     <div class="footer-column">
-      <h4>Customer Onboarding</h4>
-      <a href="index.html">Case Study Home</a>
-      <a href="overview.html">Case Study Overview</a>
-      <a href="wealth-context.html">Universal Loan Wealth Context</a>
-      <a href="4. Domain Architecture Diagram .pdf">Domain Architecture Diagram</a>
-      <a href="5. Onboarding Solution Design .PNG">Solution Design</a>
-      <a href="6. Universal Loan onboarding Flow Chart.pdf">Onboarding Flow Chart</a>
+
+      <h4>
+        Universal Loan
+      </h4>
+
+      <a href="#architecture-question">
+        Architecture Question
+      </a>
+
+      <a href="#analysis-model">
+        Solution Analysis
+      </a>
+
+      <a href="#capabilities">
+        Capability Architecture
+      </a>
+
+      <a href="#object-model">
+        Object Model
+      </a>
+
+      <a href="#architecture">
+        Solution Architecture
+      </a>
+
     </div>
 
+
+
     <div class="footer-column">
-      <h4>Architecture Domains</h4>
-      <a href="../customer.servicing/">Customer Servicing</a>
-      <a href="../payments.operations/">Payments Operations</a>
-      <a href="../salesforce.banking.ecosystem/">Salesforce Banking Ecosystem</a>
-      <a href="../future.state.architecture/">Future State Architecture</a>
+
+      <h4>
+        Architecture Artefacts
+      </h4>
+
+      <a href="overview.html">
+        Case Study Overview
+      </a>
+
+      <a href="4. Domain Architecture Diagram .pdf">
+        Domain Architecture Diagram
+      </a>
+
+      <a href="5. Onboarding Solution Design .PNG">
+        Solution Design
+      </a>
+
+      <a href="6. Universal Loan onboarding Flow Chart.pdf">
+        Process Flow
+      </a>
+
+      <a href="flowgear-integration-extension.html">
+        Flowgear Integration Extension
+      </a>
+
     </div>
+
+
+
+    <div class="footer-column">
+
+      <h4>
+        Portfolio
+      </h4>
+
+      <a href="../index.html">
+        Home
+      </a>
+
+      <a href="../index.html#architecture-philosophy">
+        Architecture Approach
+      </a>
+
+      <a href="../index.html#architecture-domains">
+        Architecture Domains
+      </a>
+
+      <a href="../index.html#case-studies">
+        Case Studies
+      </a>
+
+    </div>
+
 
   </div>
+
+
 
   <div class="footer-bottom">
-    <span>© 2026 Customer & Operations Architecture Portfolio</span>
-    <span>Designed as an architecture knowledge base</span>
+
+    <span>
+      © 2026 Customer & Operations Architecture Portfolio
+    </span>
+
+    <span>
+      Universal Loan Architecture Case Study
+    </span>
+
   </div>
+
 </footer>
 
+
 </body>
+
 </html>
