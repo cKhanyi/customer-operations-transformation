@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Role Alignment | Siya Khanyi</title>
+
+  <meta
+    name="description"
+    content="Evidence-led role alignment portfolio for Siya Khanyi."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=8"
+  >
+
+  <style>
+
+    /* =========================================================
+       ROLE ALIGNMENT — PAGE-SPECIFIC ADDITIONS
+       ========================================================= */
+
+    .role-page {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+
+    .role-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+
+    .role-meta span {
+      padding: 8px 12px;
+
+      background: #F8FAFC;
+
+      border: 1px solid #CBD5E1;
+      border-radius: 999px;
+
+      color: #334155;
+
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+
+    .alignment-score {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, 0.35fr)
+        minmax(0, 1fr);
+
+      gap: 26px;
+
+      align-items: center;
+
+      margin-top: 28px;
+    }
+
+
+    .score-number {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 170px;
+      height: 170px;
+
+      border: 12px solid #E2E8F0;
+      border-radius: 50%;
+
+      font-size: 2.7rem;
+      font-weight: 900;
+
+      letter-spacing: -0.05em;
+    }
+
+
+    .score-copy h3 {
+      margin-bottom: 8px;
+    }
+
+
+    .alignment-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 18px;
+
+      margin-top: 28px;
+    }
+
+
+    .alignment-card {
+      display: flex;
+      flex-direction: column;
+
+      padding: 22px;
+
+      background: #FFFFFF;
+
+      border: 1px solid #CBD5E1;
+      border-radius: 18px;
+    }
+
+
+    .alignment-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 14px;
+
+      margin-bottom: 14px;
+    }
+
+
+    .alignment-card h3 {
+      margin: 0;
+    }
+
+
+    .alignment-status {
+      flex: 0 0 auto;
+
+      padding: 6px 9px;
+
+      border-radius: 999px;
+
+      font-size: 0.72rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+
+    .status-strong {
+      color: #1B5E20;
+      background: #ECFDF3;
+
+      border: 1px solid #1B5E20;
+    }
+
+
+    .status-transferable {
+      color: #5B2C83;
+      background: #F5EEFB;
+
+      border: 1px solid #5B2C83;
+    }
+
+
+    .status-developing {
+      color: #7A5200;
+      background: #FFF7DD;
+
+      border: 1px solid #7A5200;
+    }
+
+
+    .alignment-card p {
+      color: #334155;
+    }
+
+
+    .evidence-list {
+      margin: 14px 0 0;
+      padding-left: 20px;
+    }
+
+
+    .evidence-list li {
+      margin-bottom: 8px;
+    }
+
+
+    .evidence-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+
+    .evidence-link {
+      display: inline-flex;
+      align-items: center;
+
+      min-height: 38px;
+
+      padding: 8px 11px;
+
+      color: #005FCC;
+      background: #EAF2FF;
+
+      border: 1px solid #005FCC;
+      border-radius: 9px;
+
+      font-size: 0.8rem;
+      font-weight: 800;
+
+      text-decoration: none;
+    }
+
+
+    .journey-strip {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+
+      gap: 12px;
+
+      margin-top: 28px;
+    }
+
+
+    .journey-step {
+      position: relative;
+
+      padding: 20px;
+
+      border: 1px solid #CBD5E1;
+      border-radius: 16px;
+
+      background: #FFFFFF;
+    }
+
+
+    .journey-step-number {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #005FCC;
+
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+
+    .journey-step strong {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+
+    .proof-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 16px;
+
+      margin-top: 24px;
+    }
+
+
+    .proof-card {
+      padding: 22px;
+
+      background: #0B1220;
+      color: #F8FAFC;
+
+      border-radius: 18px;
+    }
+
+
+    .proof-card h3 {
+      color: #FFFFFF;
+    }
+
+
+    .proof-card p {
+      color: #CBD5E1;
+    }
+
+
+    .proof-card a {
+      color: #FFFFFF;
+
+      font-weight: 800;
+    }
+
+
+    .bridge-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(300px, 0.8fr);
+
+      gap: 28px;
+
+      align-items: start;
+
+      margin-top: 28px;
+    }
+
+
+    .bridge-path {
+      display: grid;
+      gap: 10px;
+    }
+
+
+    .bridge-node {
+      padding: 16px 18px;
+
+      border: 1px solid #CBD5E1;
+      border-radius: 13px;
+
+      background: #FFFFFF;
+
+      font-weight: 800;
+    }
+
+
+    .gap-card {
+      padding: 24px;
+
+      background: #FFF7DD;
+
+      border: 1px solid #7A5200;
+      border-radius: 18px;
+    }
+
+
+    .gap-card h3 {
+      color: #5B3C00;
+    }
+
+
+    .role-switcher {
+      margin-top: 18px;
+    }
+
+
+    .role-switcher select {
+      width: min(100%, 480px);
+
+      min-height: 46px;
+
+      padding: 10px 13px;
+
+      border: 1px solid #94A3B8;
+      border-radius: 10px;
+
+      background: #FFFFFF;
+      color: #0B1220;
+
+      font-weight: 700;
+    }
+
+
+    .empty-state {
+      padding: 50px 30px;
+
+      text-align: center;
+    }
+
+
+    @media (max-width: 760px) {
+
+      .alignment-score,
+      .bridge-layout {
+        grid-template-columns: 1fr;
+      }
+
+
+      .score-number {
+        width: 140px;
+        height: 140px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+<a
+  class="skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+
+
+
+<nav
+  class="navbar"
+  aria-label="Primary navigation"
+>
+
+  <div class="nav-brand">
+    Siya Khanyi
+  </div>
+
+
+  <div class="nav-links">
+
+    <a href="/">
+      Portfolio
+    </a>
+
+    <a href="#alignment">
+      Alignment
+    </a>
+
+    <a href="#evidence">
+      Evidence
+    </a>
+
+    <a href="#bridge">
+      Career Bridge
+    </a>
+
+    <a href="#gaps">
+      Gaps
+    </a>
+
+  </div>
+
+</nav>
+
+
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <span class="eyebrow">
+      Role Alignment · Evidence Portfolio
+    </span>
+
+
+    <h1 id="role-title">
+      Loading role…
+    </h1>
+
+
+    <p id="role-positioning">
+    </p>
+
+
+    <div
+      class="role-meta"
+      id="role-meta"
+    >
+    </div>
+
+
+    <div class="hero-actions">
+
+      <a
+        class="button primary"
+        href="#alignment"
+      >
+        See Role Alignment
+      </a>
+
+
+      <a
+        class="button secondary"
+        id="featured-case-link"
+        href="#"
+      >
+        Featured Evidence
+      </a>
+
+
+      <a
+        class="button secondary"
+        href="/customer-operations-transformation/"
+      >
+        Full Portfolio
+      </a>
+
+    </div>
+
+
+    <div class="role-switcher">
+
+      <label for="role-select">
+        <strong>
+          View another role alignment
+        </strong>
+      </label>
+
+      <br>
+
+      <select
+        id="role-select"
+        aria-label="Choose role alignment"
+      >
+      </select>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<main
+  class="role-page"
+  id="main-content"
+>
+
+
+<!-- =========================================================
+     FIT SUMMARY
+     ========================================================== -->
+
+<section
+  class="panel"
+  id="alignment"
+>
+
+  <span class="section-kicker">
+    Alignment Summary
+  </span>
+
+
+  <h2>
+    What transfers — and where the stretch sits.
+  </h2>
+
+
+  <div class="alignment-score">
+
+    <div
+      class="score-number"
+      id="alignment-score"
+      aria-label="Overall role alignment score"
+    >
+      —
+    </div>
+
+
+    <div class="score-copy">
+
+      <h3 id="alignment-headline">
+      </h3>
+
+      <p id="alignment-summary">
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REQUIREMENT MAPPING
+     ========================================================== -->
+
+<section class="panel">
+
+  <span class="section-kicker">
+    Requirement → Evidence
+  </span>
+
+
+  <h2>
+    The role, mapped to proof.
+  </h2>
+
+
+  <div
+    class="alignment-grid"
+    id="alignment-grid"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     METHOD
+     ========================================================== -->
+
+<section class="panel">
+
+  <span class="section-kicker">
+    How I Work
+  </span>
+
+
+  <h2 id="method-heading">
+    From ambiguity to implementable direction.
+  </h2>
+
+
+  <div
+    class="journey-strip"
+    id="journey-strip"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EVIDENCE
+     ========================================================== -->
+
+<section
+  class="panel"
+  id="evidence"
+>
+
+  <span class="section-kicker">
+    Evidence Library
+  </span>
+
+
+  <h2>
+    Don't take the positioning on trust.
+  </h2>
+
+
+  <div
+    class="proof-grid"
+    id="proof-grid"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CAREER BRIDGE
+     ========================================================== -->
+
+<section
+  class="panel"
+  id="bridge"
+>
+
+  <span class="section-kicker">
+    Career Bridge
+  </span>
+
+
+  <h2 id="bridge-heading">
+    The path is part of the capability.
+  </h2>
+
+
+  <div class="bridge-layout">
+
+    <div>
+
+      <p id="bridge-copy">
+      </p>
+
+
+      <div
+        class="bridge-path"
+        id="bridge-path"
+      >
+      </div>
+
+    </div>
+
+
+    <article class="featured-case">
+
+      <span class="case-status">
+        Transferable Advantage
+      </span>
+
+
+      <h3 id="bridge-advantage-title">
+      </h3>
+
+
+      <p id="bridge-advantage-copy">
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GAPS
+     ========================================================== -->
+
+<section
+  class="panel"
+  id="gaps"
+>
+
+  <span class="section-kicker">
+    Gaps & Ramp
+  </span>
+
+
+  <h2>
+    Where I would need to ramp — explicitly.
+  </h2>
+
+
+  <div
+    class="compact-grid"
+    id="gaps-grid"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VALUE / WHAT I BRING
+     ========================================================== -->
+
+<section class="case-section">
+
+  <div class="case-copy">
+
+    <span class="section-kicker gold">
+      What I Bring
+    </span>
+
+
+    <h2 id="value-title">
+    </h2>
+
+  </div>
+
+
+  <div
+    class="compact-grid"
+    id="value-grid"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CLOSE
+     ========================================================== -->
+
+<section class="panel">
+
+  <span class="section-kicker">
+    The Proposition
+  </span>
+
+
+  <h2 id="closing-title">
+  </h2>
+
+
+  <p id="closing-copy">
+  </p>
+
+
+  <div class="section-actions">
+
+    <a
+      class="button primary"
+      id="closing-primary-link"
+      href="#"
+    >
+      Explore Featured Evidence
+    </a>
+
+
+    <a
+      class="button secondary"
+      href="/customer-operations-transformation/"
+    >
+      View Full Portfolio
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+
+      <h3>
+        Siya Khanyi
+      </h3>
+
+      <p>
+        Customer · Operations · Solution Architecture
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
+        Alignment
+      </h4>
+
+      <a href="#alignment">
+        Role Fit
+      </a>
+
+      <a href="#evidence">
+        Evidence
+      </a>
+
+      <a href="#gaps">
+        Gaps & Ramp
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>
+        Portfolio
+      </h4>
+
+      <a href="/customer-operations-transformation/">
+        Portfolio Home
+      </a>
+
+      <a href="customer-onboarding/flowgear-integration-extension.html">
+        Flowgear Architecture
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 Customer & Operations Architecture Portfolio
+    </span>
+
+    <span id="footer-role">
+      Role Alignment
+    </span>
+
+  </div>
+
+</footer>
+
+
+
+<script
+  src="role-alignment-data.js"
+  defer
+></script>
+
+<script
+  src="role-alignment.js"
+  defer
+></script>
+
+
+</body>
+
+</html>
