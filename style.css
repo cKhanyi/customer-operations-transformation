@@ -1907,25 +1907,19 @@ summary:focus-visible {
    ============================================================ */
 
 .portfolio-role-switcher {
-
   margin-left: auto;
 
   display: flex;
   align-items: center;
-
   gap: 8px;
 
   padding-left: 14px;
 
-  border-left:
-    1px solid
-    rgba(15, 23, 42, 0.12);
-
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 
 .portfolio-role-label {
-
   color: #475569;
 
   font-size: 0.72rem;
@@ -1935,100 +1929,426 @@ summary:focus-visible {
   text-transform: uppercase;
 
   white-space: nowrap;
-
 }
 
 
 .portfolio-role-select {
-
-  max-width: 270px;
-
+  max-width: 280px;
   min-height: 40px;
 
-  padding:
-    8px
-    34px
-    8px
-    11px;
+  padding: 8px 34px 8px 11px;
 
   color: #0B1220;
-
   background: #FFFFFF;
 
-  border:
-    1px solid
-    #CBD5E1;
-
+  border: 1px solid #CBD5E1;
   border-radius: 9px;
 
   font-size: 0.8rem;
   font-weight: 750;
 
   cursor: pointer;
-
 }
 
 
 .portfolio-role-select:hover {
-
-  border-color:
-    #64748B;
-
+  border-color: #64748B;
 }
 
 
 .portfolio-role-select:focus-visible {
-
-  outline:
-    3px solid
-    #005FCC;
-
-  outline-offset:
-    3px;
-
+  outline: 3px solid #005FCC;
+  outline-offset: 3px;
 }
 
 
 .portfolio-role-alignment-link {
-
   min-height: 40px;
 
   display: inline-flex;
   align-items: center;
 
-  padding:
-    8px
-    12px;
+  padding: 8px 12px;
 
   color: #FFFFFF;
-
   background: #0B1220;
 
-  border:
-    1px solid
-    #0B1220;
-
+  border: 1px solid #0B1220;
   border-radius: 9px;
 
   font-size: 0.78rem;
   font-weight: 800;
 
   text-decoration: none;
-
   white-space: nowrap;
-
 }
 
 
 .portfolio-role-alignment-link:hover {
-
   color: #FFFFFF;
+  background: #1E293B;
+}
 
-  background:
-    #1E293B;
+
+/* ============================================================
+   ACTIVE ROLE CONTEXT
+   ============================================================ */
+
+.role-context {
+  width: 100%;
+
+  background: #F5EEFB;
+
+  border-bottom: 1px solid #CDB6DF;
+}
+
+
+.role-context[hidden] {
+  display: none;
+}
+
+
+.role-context-inner {
+  max-width: 1240px;
+
+  margin: 0 auto;
+  padding: 12px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.role-context-copy {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  color: #334155;
+
+  font-size: 0.86rem;
+}
+
+
+.role-context-copy strong {
+  color: #3E1D59;
+}
+
+
+.role-context-kicker {
+  color: #5B2C83;
+
+  font-size: 0.72rem;
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+.role-context-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  white-space: nowrap;
+}
+
+
+.role-context-actions a {
+  color: #5B2C83;
+
+  font-size: 0.8rem;
+  font-weight: 850;
+
+  text-decoration: none;
+}
+
+
+.role-context-actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+.role-context-actions button {
+  padding: 6px 10px;
+
+  color: #334155;
+  background: #FFFFFF;
+
+  border: 1px solid #94A3B8;
+  border-radius: 7px;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.role-context-actions button:hover {
+  background: #F8FAFC;
+}
+
+
+/* ============================================================
+   ROLE-TAILORED EVIDENCE
+   ============================================================ */
+
+.tailored-evidence-section[hidden] {
+  display: none;
+}
+
+
+.tailored-evidence-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 18px;
+
+  margin-top: 28px;
+}
+
+
+.tailored-evidence-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 320px;
+
+  padding: 24px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #CBD5E1;
+  border-radius: 18px;
+
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+
+.tailored-evidence-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #94A3B8;
+
+  box-shadow:
+    0 12px 32px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+.tailored-evidence-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.tailored-evidence-number {
+  color: #005FCC;
+
+  font-size: 0.78rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+}
+
+
+.tailored-evidence-type {
+  color: #334155;
+
+  font-size: 0.72rem;
+  font-weight: 850;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  text-align: right;
+}
+
+
+.tailored-evidence-card h3 {
+  margin-bottom: 8px;
+}
+
+
+.evidence-provenance {
+  align-self: flex-start;
+
+  margin-bottom: 14px;
+
+  padding: 5px 9px;
+
+  color: #334155;
+  background: #F8FAFC;
+
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+
+.tailored-evidence-card p {
+  color: #334155;
+}
+
+
+.tailored-evidence-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin: 8px 0 20px;
+}
+
+
+.tailored-evidence-tags span {
+  padding: 5px 8px;
+
+  color: #3E1D59;
+  background: #F5EEFB;
+
+  border-radius: 999px;
+
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+
+.tailored-evidence-card > a {
+  margin-top: auto;
+
+  color: #005FCC;
+
+  font-weight: 850;
+
+  text-decoration: none;
+}
+
+
+.tailored-evidence-card > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+/* ============================================================
+   ACCESSIBILITY / FOCUS
+   ============================================================ */
+
+.portfolio-role-alignment-link:focus-visible,
+.role-context-actions a:focus-visible,
+.role-context-actions button:focus-visible,
+.tailored-evidence-card > a:focus-visible {
+  outline: 3px solid #005FCC;
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .portfolio-role-switcher {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 10px 0 0;
+
+    border-left: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.12);
+  }
 
 }
 
+
+@media (max-width: 680px) {
+
+  .portfolio-role-switcher {
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+  }
+
+
+  .portfolio-role-label {
+    grid-column: 1 / -1;
+  }
+
+
+  .portfolio-role-select {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  .role-context-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  .role-context-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+
+  .tailored-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .tailored-evidence-card {
+    min-height: 0;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tailored-evidence-card {
+    transition: none;
+  }
+
+
+  .tailored-evidence-card:hover {
+    transform: none;
+  }
+
+}
 
 
 /* ============================================================
