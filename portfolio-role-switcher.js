@@ -1,82 +1,126 @@
 /* =============================================================
    GLOBAL PORTFOLIO ROLE SWITCHER
    -------------------------------------------------------------
-   Reads roles from window.ROLE_ALIGNMENTS
-   Injects a reusable role selector into any .navbar
-   Persists role context across the portfolio
+   Responsibilities:
+   - Read available roles from ROLE_ALIGNMENTS
+   - Persist selected role in localStorage
+   - Inject a global role selector into the navbar
+   - Show active role context
+   - Tailor homepage evidence dynamically
+   - Keep role-specific evidence reusable
    ============================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  const roles =
-    window.ROLE_ALIGNMENTS || {};
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-  const roleKeys =
-    Object.keys(roles);
-
-  if (!roleKeys.length) {
-    return;
-  }
+    const roles =
+      window.ROLE_ALIGNMENTS || {};
 
 
-  const STORAGE_KEY =
-    "siyaPortfolioSelectedRole";
+    const evidenceLibrary =
+      window.PORTFOLIO_EVIDENCE || {};
 
 
-  const params =
-    new URLSearchParams(window.location.search);
+    const roleKeys =
+      Object.keys(roles);
 
 
-  const queryRole =
-    params.get("role");
+    /*
+     * If no roles exist yet,
+     * leave the general portfolio untouched.
+     */
+    if (!roleKeys.length) {
+      return;
+    }
 
 
-  const savedRole =
-    localStorage.getItem(STORAGE_KEY);
+    const STORAGE_KEY =
+      "siyaPortfolioSelectedRole";
 
 
-  let selectedRole = "";
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
 
 
-  if (queryRole && roles[queryRole]) {
+    const queryRole =
+      params.get("role");
 
-    selectedRole =
-      queryRole;
 
-    localStorage.setItem(
-      STORAGE_KEY,
+    const savedRole =
+      localStorage.getItem(
+        STORAGE_KEY
+      );
+
+
+    let selectedRole =
+      "";
+
+
+    /*
+     * Query-string role takes priority.
+     */
+    if (
+      queryRole &&
+      roles[queryRole]
+    ) {
+
+      selectedRole =
+        queryRole;
+
+
+      localStorage.setItem(
+        STORAGE_KEY,
+        selectedRole
+      );
+
+    }
+
+
+    /*
+     * Otherwise use previously selected role.
+     */
+    else if (
+      savedRole &&
+      roles[savedRole]
+    ) {
+
+      selectedRole =
+        savedRole;
+
+    }
+
+
+    injectRoleSwitcher(
+      roles,
+      selectedRole,
+      STORAGE_KEY
+    );
+
+
+    renderRoleContext(
+      roles,
+      selectedRole,
+      STORAGE_KEY
+    );
+
+
+    renderTailoredHomepage(
+      roles,
+      evidenceLibrary,
       selectedRole
     );
 
-  } else if (
-    savedRole &&
-    roles[savedRole]
-  ) {
-
-    selectedRole =
-      savedRole;
-
   }
-
-
-  injectRoleSwitcher(
-    roles,
-    selectedRole,
-    STORAGE_KEY
-  );
-
-
-  renderRoleContext(
-    roles,
-    selectedRole
-  );
-
-});
+);
 
 
 
 /* =============================================================
-   INJECT GLOBAL NAV COMPONENT
+   GLOBAL NAVIGATION ROLE SWITCHER
    ============================================================= */
 
 function injectRoleSwitcher(
@@ -86,17 +130,22 @@ function injectRoleSwitcher(
 ) {
 
   const navbar =
-    document.querySelector(".navbar");
+    document.querySelector(
+      ".navbar"
+    );
 
 
+  /*
+   * Only inject where the portfolio
+   * already contains its standard navbar.
+   */
   if (!navbar) {
     return;
   }
 
 
   /*
-   * Prevent duplicate injection if this script
-   * is loaded more than once.
+   * Prevent duplicate controls.
    */
   if (
     document.getElementById(
@@ -108,7 +157,9 @@ function injectRoleSwitcher(
 
 
   const wrapper =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
 
   wrapper.id =
@@ -119,8 +170,15 @@ function injectRoleSwitcher(
     "portfolio-role-switcher";
 
 
+
+  /* -----------------------------------------------------------
+     LABEL
+     ----------------------------------------------------------- */
+
   const label =
-    document.createElement("label");
+    document.createElement(
+      "label"
+    );
 
 
   label.className =
@@ -137,8 +195,15 @@ function injectRoleSwitcher(
     "Tailor portfolio";
 
 
+
+  /* -----------------------------------------------------------
+     SELECT
+     ----------------------------------------------------------- */
+
   const select =
-    document.createElement("select");
+    document.createElement(
+      "select"
+    );
 
 
   select.id =
@@ -155,12 +220,15 @@ function injectRoleSwitcher(
   );
 
 
+
   /* -----------------------------------------------------------
-     GENERAL PORTFOLIO OPTION
+     GENERAL PORTFOLIO
      ----------------------------------------------------------- */
 
   const general =
-    document.createElement("option");
+    document.createElement(
+      "option"
+    );
 
 
   general.value =
@@ -171,7 +239,13 @@ function injectRoleSwitcher(
     "General portfolio";
 
 
-  select.appendChild(general);
+  general.selected =
+    selectedRole === "";
+
+
+  select.appendChild(
+    general
+  );
 
 
 
@@ -180,42 +254,44 @@ function injectRoleSwitcher(
      ----------------------------------------------------------- */
 
   Object.entries(roles)
-    .forEach(([key, role]) => {
+    .forEach(
+      ([key, role]) => {
 
-      const option =
-        document.createElement("option");
-
-
-      option.value =
-        key;
-
-
-      option.textContent =
-        `${role.company} · ${role.role}`;
+        const option =
+          document.createElement(
+            "option"
+          );
 
 
-      if (
-        key === selectedRole
-      ) {
+        option.value =
+          key;
+
+
+        option.textContent =
+          `${role.company} · ${role.role}`;
+
 
         option.selected =
-          true;
+          key === selectedRole;
+
+
+        select.appendChild(
+          option
+        );
 
       }
-
-
-      select.appendChild(option);
-
-    });
+    );
 
 
 
   /* -----------------------------------------------------------
-     ALIGNMENT BUTTON
+     VIEW ALIGNMENT BUTTON
      ----------------------------------------------------------- */
 
   const alignmentLink =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   alignmentLink.className =
@@ -226,15 +302,32 @@ function injectRoleSwitcher(
     "View alignment";
 
 
-  updateAlignmentLink(
-    alignmentLink,
-    selectedRole
-  );
+  if (selectedRole) {
+
+    alignmentLink.href =
+      `${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(selectedRole)}`;
+
+
+    alignmentLink.hidden =
+      false;
+
+  }
+
+  else {
+
+    alignmentLink.href =
+      `${getPortfolioRoot()}role-alignment.html`;
+
+
+    alignmentLink.hidden =
+      true;
+
+  }
 
 
 
   /* -----------------------------------------------------------
-     SELECT BEHAVIOUR
+     CHANGE ROLE
      ----------------------------------------------------------- */
 
   select.addEventListener(
@@ -245,6 +338,9 @@ function injectRoleSwitcher(
         event.target.value;
 
 
+      /*
+       * Return to general portfolio.
+       */
       if (!roleKey) {
 
         localStorage.removeItem(
@@ -261,23 +357,60 @@ function injectRoleSwitcher(
       }
 
 
+      /*
+       * Save active role.
+       */
       localStorage.setItem(
         storageKey,
         roleKey
       );
 
 
-      window.location.href =
-        `${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(roleKey)}`;
+      /*
+       * If already on the homepage,
+       * stay there and reload it with role context.
+       *
+       * This is what makes the homepage itself
+       * dynamically tailor rather than immediately
+       * throwing the visitor into role alignment.
+       */
+      if (isPortfolioHomepage()) {
+
+        window.location.href =
+          `${getPortfolioRoot()}?role=${encodeURIComponent(roleKey)}`;
+
+      }
+
+      else {
+
+        /*
+         * On deeper portfolio pages,
+         * selecting another role takes the visitor
+         * into that role's evidence mapping.
+         */
+        window.location.href =
+          `${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(roleKey)}`;
+
+      }
 
     }
   );
 
 
 
-  wrapper.appendChild(label);
+  /* -----------------------------------------------------------
+     BUILD COMPONENT
+     ----------------------------------------------------------- */
 
-  wrapper.appendChild(select);
+  wrapper.appendChild(
+    label
+  );
+
+
+  wrapper.appendChild(
+    select
+  );
+
 
   wrapper.appendChild(
     alignmentLink
@@ -293,45 +426,13 @@ function injectRoleSwitcher(
 
 
 /* =============================================================
-   UPDATE ALIGNMENT LINK
-   ============================================================= */
-
-function updateAlignmentLink(
-  link,
-  selectedRole
-) {
-
-  if (selectedRole) {
-
-    link.href =
-      `${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(selectedRole)}`;
-
-
-    link.hidden =
-      false;
-
-  } else {
-
-    link.href =
-      `${getPortfolioRoot()}role-alignment.html`;
-
-
-    link.hidden =
-      true;
-
-  }
-
-}
-
-
-
-/* =============================================================
-   OPTIONAL ROLE CONTEXT BANNER
+   ACTIVE ROLE CONTEXT BANNER
    ============================================================= */
 
 function renderRoleContext(
   roles,
-  selectedRole
+  selectedRole,
+  storageKey
 ) {
 
   const container =
@@ -340,11 +441,18 @@ function renderRoleContext(
     );
 
 
+  /*
+   * Some deep pages may not contain
+   * the context banner. That's fine.
+   */
   if (!container) {
     return;
   }
 
 
+  /*
+   * General portfolio mode.
+   */
   if (
     !selectedRole ||
     !roles[selectedRole]
@@ -352,6 +460,11 @@ function renderRoleContext(
 
     container.hidden =
       true;
+
+
+    container.innerHTML =
+      "";
+
 
     return;
 
@@ -376,11 +489,13 @@ function renderRoleContext(
           Portfolio tailored for
         </span>
 
+
         <strong>
           ${escapeRoleHtml(role.company)}
           ·
           ${escapeRoleHtml(role.role)}
         </strong>
+
 
         ${
           role.specialism
@@ -400,7 +515,7 @@ function renderRoleContext(
         <a
           href="${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(selectedRole)}"
         >
-          View evidence alignment →
+          View full alignment →
         </a>
 
 
@@ -408,7 +523,7 @@ function renderRoleContext(
           type="button"
           id="clear-role-context"
         >
-          Clear
+          Clear tailoring
         </button>
 
       </div>
@@ -429,7 +544,7 @@ function renderRoleContext(
     () => {
 
       localStorage.removeItem(
-        "siyaPortfolioSelectedRole"
+        storageKey
       );
 
 
@@ -444,13 +559,331 @@ function renderRoleContext(
 
 
 /* =============================================================
+   TAILORED HOMEPAGE
+   ============================================================= */
+
+function renderTailoredHomepage(
+  roles,
+  evidenceLibrary,
+  selectedRole
+) {
+
+  const section =
+    document.getElementById(
+      "tailored-evidence"
+    );
+
+
+  /*
+   * Only the homepage currently has
+   * the tailored evidence section.
+   */
+  if (!section) {
+    return;
+  }
+
+
+  /*
+   * General portfolio mode.
+   */
+  if (
+    !selectedRole ||
+    !roles[selectedRole]
+  ) {
+
+    section.hidden =
+      true;
+
+
+    return;
+
+  }
+
+
+  const role =
+    roles[selectedRole];
+
+
+  const context =
+    role.homepageContext || {};
+
+
+  /* -----------------------------------------------------------
+     SECTION COPY
+     ----------------------------------------------------------- */
+
+  setRoleText(
+    "tailored-eyebrow",
+    context.eyebrow ||
+    "Role-Specific Evidence"
+  );
+
+
+  setRoleText(
+    "tailored-title",
+    context.title ||
+    `${role.role} evidence`
+  );
+
+
+  setRoleText(
+    "tailored-summary",
+    context.summary ||
+    role.positioning
+  );
+
+
+
+  /* -----------------------------------------------------------
+     EVIDENCE GRID
+     ----------------------------------------------------------- */
+
+  const grid =
+    document.getElementById(
+      "tailored-evidence-grid"
+    );
+
+
+  if (!grid) {
+    return;
+  }
+
+
+  grid.innerHTML =
+    "";
+
+
+  const priorities =
+    role.priorityEvidence || [];
+
+
+  priorities.forEach(
+    (evidenceId, index) => {
+
+      const evidence =
+        evidenceLibrary[evidenceId];
+
+
+      /*
+       * Ignore accidental references
+       * to evidence that does not exist.
+       */
+      if (!evidence) {
+        return;
+      }
+
+
+      const card =
+        document.createElement(
+          "article"
+        );
+
+
+      card.className =
+        "tailored-evidence-card";
+
+
+      const tags =
+        (evidence.tags || [])
+          .map(
+            tag => `
+              <span>
+                ${escapeRoleHtml(tag)}
+              </span>
+            `
+          )
+          .join("");
+
+
+      card.innerHTML = `
+
+        <div class="tailored-evidence-head">
+
+          <span class="tailored-evidence-number">
+            ${String(index + 1).padStart(2, "0")}
+          </span>
+
+
+          <span class="tailored-evidence-type">
+            ${escapeRoleHtml(evidence.category)}
+          </span>
+
+        </div>
+
+
+        <h3>
+          ${escapeRoleHtml(evidence.title)}
+        </h3>
+
+
+        <span class="evidence-provenance">
+          ${escapeRoleHtml(evidence.provenance)}
+        </span>
+
+
+        <p>
+          ${escapeRoleHtml(evidence.description)}
+        </p>
+
+
+        <div class="tailored-evidence-tags">
+          ${tags}
+        </div>
+
+
+        <a
+          href="${escapeRoleHtml(resolveEvidenceHref(evidence.href))}"
+        >
+          ${escapeRoleHtml(evidence.cta)}
+          →
+        </a>
+
+      `;
+
+
+      grid.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+
+  /* -----------------------------------------------------------
+     FULL ALIGNMENT CTA
+     ----------------------------------------------------------- */
+
+  const fullAlignmentLink =
+    document.getElementById(
+      "tailored-alignment-link"
+    );
+
+
+  if (fullAlignmentLink) {
+
+    fullAlignmentLink.href =
+      `${getPortfolioRoot()}role-alignment.html?role=${encodeURIComponent(selectedRole)}`;
+
+  }
+
+
+  section.hidden =
+    false;
+
+}
+
+
+
+/* =============================================================
+   DETECT HOMEPAGE
+   ============================================================= */
+
+function isPortfolioHomepage() {
+
+  const pathname =
+    window.location.pathname;
+
+
+  const repoRoot =
+    "/customer-operations-transformation/";
+
+
+  return (
+
+    pathname === "/" ||
+
+    pathname.endsWith(
+      "/index.html"
+    ) ||
+
+    pathname ===
+      repoRoot ||
+
+    pathname.endsWith(
+      "/customer-operations-transformation/index.html"
+    )
+
+  );
+
+}
+
+
+
+/* =============================================================
+   RESOLVE EVIDENCE LINKS
+   ============================================================= */
+
+function resolveEvidenceHref(
+  href
+) {
+
+  if (!href) {
+    return "#";
+  }
+
+
+  /*
+   * External link.
+   */
+  if (
+    href.startsWith(
+      "http://"
+    ) ||
+    href.startsWith(
+      "https://"
+    )
+  ) {
+
+    return href;
+
+  }
+
+
+  /*
+   * Same-page anchor.
+   */
+  if (
+    href.startsWith("#")
+  ) {
+
+    return href;
+
+  }
+
+
+  /*
+   * Already absolute.
+   */
+  if (
+    href.startsWith("/")
+  ) {
+
+    return href;
+
+  }
+
+
+  /*
+   * Repository-relative evidence.
+   */
+  return (
+    getPortfolioRoot() +
+    href
+  );
+
+}
+
+
+
+/* =============================================================
    PORTFOLIO ROOT
-   Works on GitHub Pages and local development
+   Supports GitHub Pages and local development
    ============================================================= */
 
 function getPortfolioRoot() {
 
-  const path =
+  const pathname =
     window.location.pathname;
 
 
@@ -459,7 +892,9 @@ function getPortfolioRoot() {
 
 
   if (
-    path.includes(repoSegment)
+    pathname.includes(
+      repoSegment
+    )
   ) {
 
     return repoSegment;
@@ -474,7 +909,33 @@ function getPortfolioRoot() {
 
 
 /* =============================================================
-   SAFE HTML
+   TEXT HELPER
+   ============================================================= */
+
+function setRoleText(
+  id,
+  value
+) {
+
+  const element =
+    document.getElementById(
+      id
+    );
+
+
+  if (element) {
+
+    element.textContent =
+      value || "";
+
+  }
+
+}
+
+
+
+/* =============================================================
+   HTML SAFETY
    ============================================================= */
 
 function escapeRoleHtml(
