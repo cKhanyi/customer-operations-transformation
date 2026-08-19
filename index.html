@@ -21,7 +21,7 @@
 
   <link
     rel="stylesheet"
-    href="style.css?v=9"
+    href="style.css?v=10"
   >
 
 </head>
@@ -41,7 +41,7 @@
 
 <!-- ============================================================
      NAVIGATION
-     Global role selector is injected here automatically
+     Global role selector is injected automatically.
      ============================================================ -->
 
 <nav
@@ -84,7 +84,7 @@
 
 <!-- ============================================================
      ACTIVE ROLE CONTEXT
-     Hidden when General Portfolio is selected
+     Hidden for General Portfolio
      ============================================================ -->
 
 <div
@@ -159,6 +159,63 @@
 
 
 <main id="main-content">
+
+
+
+<!-- ============================================================
+     ROLE-TAILORED EVIDENCE
+     Hidden automatically in General Portfolio mode
+     ============================================================ -->
+
+<section
+  class="case-section tailored-evidence-section"
+  id="tailored-evidence"
+  aria-labelledby="tailored-title"
+  hidden
+>
+
+  <div class="case-copy">
+
+    <span
+      class="section-kicker gold"
+      id="tailored-eyebrow"
+    >
+      Role-Specific Evidence
+    </span>
+
+
+    <h2 id="tailored-title">
+      Most relevant evidence
+    </h2>
+
+
+    <p id="tailored-summary">
+    </p>
+
+  </div>
+
+
+  <div
+    class="tailored-evidence-grid"
+    id="tailored-evidence-grid"
+  >
+  </div>
+
+
+  <div class="section-actions">
+
+    <a
+      class="button secondary"
+      id="tailored-alignment-link"
+      href="role-alignment.html"
+    >
+      View full role alignment
+    </a>
+
+  </div>
+
+</section>
+
 
 
 <!-- ============================================================
@@ -643,7 +700,7 @@
 
 
 <!-- ============================================================
-     FEATURED CASE
+     FEATURED INTEGRATION CASE
      ============================================================ -->
 
 <section
@@ -914,21 +971,83 @@
     <article class="domain-card">
 
       <span class="number">
-        Customer Servicing
+        Domain Architecture
       </span>
 
 
       <h3>
-        Servicing Architecture
+        Universal Loan Domain View
       </h3>
 
 
       <p>
-        Customer requests,
-        case management,
-        operational ownership
-        and service workflow design.
+        Domain-level mapping of capabilities,
+        responsibilities,
+        services
+        and supporting systems.
       </p>
+
+
+      <a href="customer-onboarding/4.%20Domain%20Architecture%20Diagram%20.pdf">
+        View Domain Architecture →
+      </a>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <span class="number">
+        Solution Design
+      </span>
+
+
+      <h3>
+        Onboarding Solution Design
+      </h3>
+
+
+      <p>
+        Translating onboarding capability
+        into system,
+        service,
+        workflow
+        and implementation responsibilities.
+      </p>
+
+
+      <a href="customer-onboarding/5.%20Onboarding%20Solution%20Design%20.PNG">
+        View Solution Design →
+      </a>
+
+    </article>
+
+
+
+    <article class="domain-card">
+
+      <span class="number">
+        Process Architecture
+      </span>
+
+
+      <h3>
+        Onboarding Process Flow
+      </h3>
+
+
+      <p>
+        Process modelling of work,
+        decisions,
+        operational progression
+        and exception pathways.
+      </p>
+
+
+      <a href="customer-onboarding/6.%20Universal%20Loan%20onboarding%20Flow%20Chart.pdf">
+        View Process Architecture →
+      </a>
 
     </article>
 
@@ -952,53 +1071,6 @@
         onboarding,
         servicing
         and relationship banking.
-      </p>
-
-    </article>
-
-
-
-    <article class="domain-card">
-
-      <span class="number">
-        Payments Operations
-      </span>
-
-
-      <h3>
-        Payments Architecture
-      </h3>
-
-
-      <p>
-        Customer intent,
-        approvals,
-        operational dependencies,
-        exceptions
-        and supporting systems.
-      </p>
-
-    </article>
-
-
-
-    <article class="domain-card">
-
-      <span class="number">
-        Future State
-      </span>
-
-
-      <h3>
-        Capability & Operating Models
-      </h3>
-
-
-      <p>
-        Future-state models for
-        more coherent,
-        reusable
-        and scalable enterprise capability.
       </p>
 
     </article>
@@ -1147,7 +1219,7 @@
 
 
   <h2 id="technical-heading">
-    Enough engineering depth to challenge the solution.
+    Engineering depth behind the solution thinking.
   </h2>
 
 
@@ -1212,6 +1284,119 @@
     <div class="technical-pill">
       Flowgear Study
     </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PRINCIPLES
+     ============================================================ -->
+
+<section
+  class="panel"
+  aria-labelledby="principles-heading"
+>
+
+  <span class="section-kicker">
+    Working Principles
+  </span>
+
+
+  <h2 id="principles-heading">
+    What I optimise for.
+  </h2>
+
+
+  <div class="compact-grid">
+
+    <article class="compact-card">
+
+      <h3>
+        Capability before technology
+      </h3>
+
+      <p>
+        Understand what must be achieved
+        before deciding what should implement it.
+      </p>
+
+    </article>
+
+
+    <article class="compact-card">
+
+      <h3>
+        Reuse before duplication
+      </h3>
+
+      <p>
+        Existing enterprise capabilities
+        and services should be understood
+        before new ones are introduced.
+      </p>
+
+    </article>
+
+
+    <article class="compact-card">
+
+      <h3>
+        Exceptions are first-class
+      </h3>
+
+      <p>
+        A solution is incomplete
+        if it only explains the happy path.
+      </p>
+
+    </article>
+
+
+    <article class="compact-card">
+
+      <h3>
+        Clear ownership
+      </h3>
+
+      <p>
+        Capabilities,
+        information,
+        workflows
+        and systems should have understandable responsibility.
+      </p>
+
+    </article>
+
+
+    <article class="compact-card">
+
+      <h3>
+        Customer + operational value
+      </h3>
+
+      <p>
+        Better customer experiences
+        should not depend on broken operating models.
+      </p>
+
+    </article>
+
+
+    <article class="compact-card">
+
+      <h3>
+        Architecture must enable delivery
+      </h3>
+
+      <p>
+        Target states should create
+        decisions teams can actually implement.
+      </p>
+
+    </article>
 
   </div>
 
@@ -1298,6 +1483,10 @@
         Onboarding Overview
       </a>
 
+      <a href="customer-onboarding/4.%20Domain%20Architecture%20Diagram%20.pdf">
+        Domain Architecture
+      </a>
+
     </div>
 
 
@@ -1340,7 +1529,7 @@
 
 <!-- ============================================================
      GLOBAL ROLE TAILORING
-     role data must load before the switcher
+     Data must load before switcher.
      ============================================================ -->
 
 <script
