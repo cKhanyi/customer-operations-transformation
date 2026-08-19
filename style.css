@@ -1036,3 +1036,594 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ============================================================
+   FLOWGEAR / INTEGRATION ARCHITECTURE EXTENSION
+   Additive styles only — preserves existing portfolio design
+   ============================================================ */
+
+:root {
+  /* Accessible architecture semantic colours */
+  --arch-text: #0B1220;
+  --arch-muted: #334155;
+  --arch-border: #CBD5E1;
+
+  --arch-experience: #005FCC;
+  --arch-experience-bg: #EAF2FF;
+
+  --arch-integration: #5B2C83;
+  --arch-integration-bg: #F5EEFB;
+
+  --arch-service: #1B5E20;
+  --arch-service-bg: #ECFDF3;
+
+  --arch-system: #334155;
+  --arch-system-bg: #F8FAFC;
+
+  --arch-exception: #B42318;
+  --arch-exception-bg: #FFF1F0;
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+
+  padding: 12px 16px;
+
+  background: #0B1220;
+  color: #FFFFFF;
+
+  border-radius: 8px;
+
+  transform: translateY(-180%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+
+/*
+   Visible keyboard focus.
+   This intentionally applies globally because it improves
+   accessibility without changing the normal visual design.
+*/
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #005FCC;
+  outline-offset: 4px;
+  border-radius: 5px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
+   INTEGRATION PAGE LAYOUT
+   ============================================================ */
+
+.integration-page {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   SCOPE / PLATFORM-LEARNING BADGE
+   ============================================================ */
+
+.integration-page .scope-badge {
+  display: inline-block;
+
+  margin-top: 14px;
+  padding: 8px 14px;
+
+  color: var(--arch-integration);
+  background: var(--arch-integration-bg);
+
+  border: 2px solid var(--arch-integration);
+  border-radius: 999px;
+
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   ENGINEERING / TECHNICAL CAPABILITY STRIP
+   ============================================================ */
+
+.integration-page .technical-strip {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(120px, 1fr));
+
+  gap: 11px;
+  margin-top: 26px;
+}
+
+
+.integration-page .technical-pill {
+  padding: 13px 10px;
+
+  color: var(--arch-text);
+  background: #F8FAFC;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 13px;
+
+  text-align: center;
+
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+
+.integration-page .technical-note {
+  margin-top: 18px;
+
+  color: var(--arch-muted);
+
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   ARCHITECTURE LEGEND
+   Colour + letter + shape = redundant meaning
+   ============================================================ */
+
+.integration-page .architecture-legend {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 14px;
+  margin-top: 24px;
+}
+
+
+.integration-page .legend-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 13px;
+
+  padding: 16px;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 16px;
+}
+
+
+.integration-page .legend-item > div {
+  display: grid;
+  gap: 3px;
+}
+
+
+.integration-page .legend-item strong {
+  color: var(--arch-text);
+}
+
+
+.integration-page .legend-item > div span {
+  color: var(--arch-muted);
+
+  font-size: 0.84rem;
+}
+
+
+.integration-page .legend-symbol {
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+
+/* E = Experience / workflow */
+.integration-page .legend-experience {
+  color: var(--arch-experience);
+  background: var(--arch-experience-bg);
+
+  border: 2px solid var(--arch-experience);
+  border-radius: 4px;
+}
+
+
+/* I = Integration / Flowgear */
+.integration-page .legend-integration {
+  color: var(--arch-integration);
+  background: var(--arch-integration-bg);
+
+  border: 3px solid var(--arch-integration);
+  border-radius: 14px;
+}
+
+
+/* S = Reusable service */
+.integration-page .legend-service {
+  color: var(--arch-service);
+  background: var(--arch-service-bg);
+
+  border: 2px dashed var(--arch-service);
+  border-radius: 4px;
+}
+
+
+/* R = System of record */
+.integration-page .legend-system {
+  color: var(--arch-system);
+  background: var(--arch-system-bg);
+
+  border: 4px double var(--arch-system);
+  border-radius: 4px;
+}
+
+
+/* ! = Decision / exception */
+.integration-page .legend-exception {
+  color: var(--arch-exception);
+  background: var(--arch-exception-bg);
+
+  border: 2px solid var(--arch-exception);
+  border-radius: 50%;
+}
+
+
+/* ============================================================
+   MERMAID / ARCHITECTURE DIAGRAM CONTAINERS
+   ============================================================ */
+
+.integration-page .diagram-shell {
+  margin-top: 26px;
+
+  padding: clamp(18px, 4vw, 32px);
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 22px;
+
+  overflow-x: auto;
+}
+
+
+/*
+   Desktop diagrams get enough room to remain legible.
+   On small screens the container scrolls horizontally.
+*/
+.integration-page .diagram-shell .mermaid {
+  min-width: 760px;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+.integration-page .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.integration-page .mermaid .nodeLabel,
+.integration-page .mermaid .edgeLabel,
+.integration-page .mermaid text {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
+}
+
+
+.integration-page .diagram-caption {
+  margin-top: 16px;
+
+  color: var(--arch-muted);
+
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   TEXT ALTERNATIVES FOR DIAGRAMS
+   ============================================================ */
+
+.integration-page .diagram-text-alternative {
+  margin-top: 18px;
+
+  background: #F8FAFC;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 13px;
+}
+
+
+.integration-page .diagram-text-alternative summary {
+  cursor: pointer;
+
+  padding: 15px 18px;
+
+  color: var(--arch-text);
+
+  font-weight: 800;
+}
+
+
+.integration-page .diagram-text-alternative ol {
+  margin: 0 24px 22px 42px;
+  padding: 0;
+}
+
+
+.integration-page .diagram-text-alternative li {
+  margin-bottom: 8px;
+
+  color: var(--arch-muted);
+}
+
+
+/* ============================================================
+   ARCHITECTURE LAYER CARDS
+   ============================================================ */
+
+.integration-page .architecture-layer-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 16px;
+  margin-top: 24px;
+}
+
+
+.integration-page .architecture-layer {
+  padding: 18px;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 17px;
+}
+
+
+.integration-page .architecture-layer h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+
+.integration-page .architecture-layer p {
+  color: var(--arch-muted);
+}
+
+
+/* ============================================================
+   CODE / CONTRACT CARDS
+   ============================================================ */
+
+.integration-page .code-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(290px, 1fr));
+
+  gap: 18px;
+  margin-top: 26px;
+}
+
+
+.integration-page .code-card {
+  overflow: hidden;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 18px;
+}
+
+
+.integration-page .code-card-header {
+  padding: 18px 18px 12px;
+
+  border-bottom: 1px solid #E2E8F0;
+}
+
+
+.integration-page .code-card-header h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+
+.integration-page .code-card-header p {
+  margin: 0;
+
+  color: var(--arch-muted);
+
+  font-size: 0.86rem;
+}
+
+
+.integration-page .code-card pre {
+  margin: 0;
+  padding: 20px;
+
+  overflow-x: auto;
+
+  color: #F8FAFC;
+  background: #0B1220;
+
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+
+.integration-page .code-card code {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+}
+
+
+/* ============================================================
+   COMPACT DECISION / VALUE / EXCEPTION CARDS
+   ============================================================ */
+
+.integration-page .compact-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(210px, 1fr));
+
+  gap: 15px;
+  margin-top: 24px;
+}
+
+
+.integration-page .compact-card {
+  padding: 18px;
+
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 17px;
+}
+
+
+.integration-page .compact-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+
+.integration-page .compact-card p {
+  color: var(--arch-muted);
+}
+
+
+/* ============================================================
+   INTEGRATION PATTERNS
+   ============================================================ */
+
+.integration-page .pattern-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(160px, 1fr));
+
+  gap: 14px;
+  margin-top: 24px;
+}
+
+
+.integration-page .pattern-card {
+  padding: 18px;
+
+  color: var(--arch-text);
+  background: #FFFFFF;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+
+.integration-page .pattern-card strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/* ============================================================
+   SECTION ACTIONS
+   ============================================================ */
+
+.integration-page .section-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  margin-top: 24px;
+}
+
+
+/* ============================================================
+   MOBILE / RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  .integration-page .diagram-shell {
+    padding: 14px;
+  }
+
+
+  .integration-page .diagram-shell .mermaid {
+    min-width: 680px;
+  }
+
+
+  .integration-page .code-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .integration-page .section-actions {
+    flex-direction: column;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .integration-page *,
+  .integration-page *::before,
+  .integration-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
