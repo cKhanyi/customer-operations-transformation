@@ -1626,4 +1626,278 @@ summary:focus-visible {
   }
 
 }
+/* ============================================================
+   ACCESSIBLE ARCHITECTURE DIAGRAM VIEWER
+   ============================================================ */
 
+.integration-page .diagram-shell {
+  position: relative;
+  margin-top: 24px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+
+/* Preview diagram */
+.integration-page .diagram-preview {
+  position: relative;
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+.integration-page .diagram-preview .mermaid {
+  width: 100%;
+  min-width: 0;
+}
+
+
+.integration-page .diagram-preview svg {
+  width: 100% !important;
+  max-height: 440px;
+  height: auto !important;
+}
+
+
+/* Diagram controls */
+.integration-page .diagram-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+
+.integration-page .diagram-toolbar-title {
+  color: var(--arch-text);
+
+  font-size: 0.84rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+
+.integration-page .diagram-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.integration-page .diagram-control {
+  min-width: 42px;
+  min-height: 42px;
+
+  padding: 8px 12px;
+
+  color: var(--arch-text);
+  background: #ffffff;
+
+  border: 1px solid var(--arch-border);
+  border-radius: 9px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.integration-page .diagram-control:hover {
+  background: #f8fafc;
+}
+
+
+.integration-page .diagram-control:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+
+
+.integration-page .expand-diagram {
+  padding: 9px 14px;
+
+  color: #ffffff;
+  background: #0b1220;
+
+  border: 2px solid #0b1220;
+  border-radius: 9px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.integration-page .expand-diagram:hover {
+  background: #1e293b;
+}
+
+
+/* ============================================================
+   FULL SCREEN VIEWER
+   ============================================================ */
+
+.diagram-dialog {
+  width: min(96vw, 1500px);
+  height: min(94vh, 1000px);
+
+  padding: 0;
+
+  color: #0b1220;
+  background: #ffffff;
+
+  border: 0;
+  border-radius: 20px;
+
+  box-shadow:
+    0 30px 100px rgba(15, 23, 42, 0.35);
+}
+
+
+.diagram-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+
+.diagram-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #cbd5e1;
+}
+
+
+.diagram-dialog-header h2 {
+  margin: 0;
+
+  font-size: 1rem;
+}
+
+
+.diagram-dialog-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.diagram-dialog-close {
+  min-width: 42px;
+  min-height: 42px;
+
+  color: #ffffff;
+  background: #0b1220;
+
+  border: 0;
+  border-radius: 9px;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* Scrollable / pannable diagram canvas */
+.diagram-viewport {
+  width: 100%;
+  height: calc(100% - 72px);
+
+  overflow: auto;
+
+  padding: 50px;
+
+  background:
+    linear-gradient(#eef2f7 1px, transparent 1px),
+    linear-gradient(90deg, #eef2f7 1px, transparent 1px),
+    #ffffff;
+
+  background-size: 24px 24px;
+}
+
+
+.diagram-zoom-content {
+  width: max-content;
+  min-width: 100%;
+
+  transform-origin: top left;
+
+  transition: transform 0.16s ease;
+}
+
+
+.diagram-zoom-content svg {
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+/* Zoom indicator */
+.diagram-zoom-value {
+  min-width: 60px;
+
+  color: #334155;
+
+  text-align: center;
+
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .integration-page .diagram-preview {
+    min-height: 240px;
+  }
+
+
+  .diagram-dialog {
+    width: 100vw;
+    height: 100vh;
+
+    max-width: none;
+    max-height: none;
+
+    border-radius: 0;
+  }
+
+
+  .diagram-viewport {
+    padding: 24px;
+  }
+
+}
