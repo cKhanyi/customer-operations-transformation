@@ -1901,3 +1901,346 @@ summary:focus-visible {
   }
 
 }
+
+/* ============================================================
+   GLOBAL PORTFOLIO ROLE SWITCHER
+   ============================================================ */
+
+.portfolio-role-switcher {
+
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding-left: 14px;
+
+  border-left:
+    1px solid
+    rgba(15, 23, 42, 0.12);
+
+}
+
+
+.portfolio-role-label {
+
+  color: #475569;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+}
+
+
+.portfolio-role-select {
+
+  max-width: 270px;
+
+  min-height: 40px;
+
+  padding:
+    8px
+    34px
+    8px
+    11px;
+
+  color: #0B1220;
+
+  background: #FFFFFF;
+
+  border:
+    1px solid
+    #CBD5E1;
+
+  border-radius: 9px;
+
+  font-size: 0.8rem;
+  font-weight: 750;
+
+  cursor: pointer;
+
+}
+
+
+.portfolio-role-select:hover {
+
+  border-color:
+    #64748B;
+
+}
+
+
+.portfolio-role-select:focus-visible {
+
+  outline:
+    3px solid
+    #005FCC;
+
+  outline-offset:
+    3px;
+
+}
+
+
+.portfolio-role-alignment-link {
+
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding:
+    8px
+    12px;
+
+  color: #FFFFFF;
+
+  background: #0B1220;
+
+  border:
+    1px solid
+    #0B1220;
+
+  border-radius: 9px;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+}
+
+
+.portfolio-role-alignment-link:hover {
+
+  color: #FFFFFF;
+
+  background:
+    #1E293B;
+
+}
+
+
+
+/* ============================================================
+   ACTIVE ROLE CONTEXT
+   ============================================================ */
+
+.role-context {
+
+  width: 100%;
+
+  background:
+    #F5EEFB;
+
+  border-bottom:
+    1px solid
+    #CDB6DF;
+
+}
+
+
+.role-context[hidden] {
+  display: none;
+}
+
+
+.role-context-inner {
+
+  max-width: 1240px;
+
+  margin:
+    0 auto;
+
+  padding:
+    12px
+    22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+}
+
+
+.role-context-copy {
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  color:
+    #334155;
+
+  font-size: 0.86rem;
+
+}
+
+
+.role-context-copy strong {
+
+  color:
+    #3E1D59;
+
+}
+
+
+.role-context-kicker {
+
+  color:
+    #5B2C83;
+
+  font-size: 0.72rem;
+  font-weight: 900;
+
+  letter-spacing:
+    0.06em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.role-context-actions {
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  white-space: nowrap;
+
+}
+
+
+.role-context-actions a {
+
+  color:
+    #5B2C83;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    850;
+
+  text-decoration:
+    none;
+
+}
+
+
+.role-context-actions button {
+
+  padding:
+    6px
+    10px;
+
+  color:
+    #334155;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    #94A3B8;
+
+  border-radius:
+    7px;
+
+  font-size:
+    0.76rem;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+}
+
+
+
+/* ============================================================
+   NAV RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+  .portfolio-role-switcher {
+
+    width: 100%;
+
+    margin-left: 0;
+
+    padding:
+      10px
+      0
+      0;
+
+    border-left:
+      0;
+
+    border-top:
+      1px solid
+      rgba(15, 23, 42, 0.12);
+
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .portfolio-role-switcher {
+
+    display: grid;
+
+    grid-template-columns:
+      1fr auto;
+
+  }
+
+
+  .portfolio-role-label {
+
+    grid-column:
+      1 / -1;
+
+  }
+
+
+  .portfolio-role-select {
+
+    width: 100%;
+    max-width: none;
+
+  }
+
+
+  .role-context-inner {
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+  }
+
+}
