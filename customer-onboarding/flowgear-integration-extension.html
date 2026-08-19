@@ -459,7 +459,33 @@
 
   <div class="diagram-shell">
 
-    <pre class="mermaid">
+    <div class="diagram-toolbar">
+
+      <span class="diagram-toolbar-title">
+        Universal Loan Target Architecture
+      </span>
+
+      <div class="diagram-controls">
+
+        <button
+          type="button"
+          class="expand-diagram"
+          data-diagram="target-architecture-diagram"
+        >
+          Expand diagram
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="diagram-preview"
+      id="target-architecture-diagram"
+    >
+
+      <pre class="mermaid">
 flowchart TB
 
     accTitle: Universal Loan and Flowgear target integration architecture
@@ -514,44 +540,29 @@ flowchart TB
 
     SF -->|"REST / JSON request"| FG
 
-
     FG --> KYC
-
     FG --> ELIG
-
     FG --> DOC
-
     FG --> CREDIT
-
     FG --> FULFIL
 
-
     KYC --> CUSTOMER
-
     ELIG --> CORE
-
     DOC --> DOCSTORE
-
     CREDIT --> RISKSYS
-
     FULFIL --> CORE
-
     FULFIL --> SERVICING
 
-
     KYC -->|"Result"| FG
-
     ELIG -->|"Decision"| FG
-
     DOC -->|"Readiness"| FG
-
     CREDIT -->|"Decision"| FG
-
     FULFIL -->|"Status"| FG
 
-
     FG -->|"Operational state"| SF
-    </pre>
+      </pre>
+
+    </div>
 
   </div>
 
@@ -693,8 +704,6 @@ flowchart TB
   <div class="code-grid">
 
 
-    <!-- OPENAPI -->
-
     <article class="code-card">
 
       <div class="code-card-header">
@@ -736,8 +745,6 @@ flowchart TB
 
 
 
-    <!-- JSON -->
-
     <article class="code-card">
 
       <div class="code-card-header">
@@ -764,8 +771,6 @@ flowchart TB
     </article>
 
 
-
-    <!-- C# -->
 
     <article class="code-card">
 
@@ -797,8 +802,6 @@ flowchart TB
     </article>
 
 
-
-    <!-- SQL -->
 
     <article class="code-card">
 
@@ -861,7 +864,33 @@ WHERE application_id = @applicationId;</code></pre>
 
   <div class="diagram-shell">
 
-    <pre class="mermaid">
+    <div class="diagram-toolbar">
+
+      <span class="diagram-toolbar-title">
+        Business Object Model
+      </span>
+
+      <div class="diagram-controls">
+
+        <button
+          type="button"
+          class="expand-diagram"
+          data-diagram="object-model-diagram"
+        >
+          Expand diagram
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="diagram-preview"
+      id="object-model-diagram"
+    >
+
+      <pre class="mermaid">
 classDiagram
 
     accTitle: Universal Loan onboarding business object model
@@ -930,7 +959,9 @@ classDiagram
     Application "1" --> "1" Case : trackedBy
 
     Application "1" --> "0..1" FulfilmentState : progressesTo
-    </pre>
+      </pre>
+
+    </div>
 
   </div>
 
@@ -1001,7 +1032,33 @@ classDiagram
 
   <div class="diagram-shell">
 
-    <pre class="mermaid">
+    <div class="diagram-toolbar">
+
+      <span class="diagram-toolbar-title">
+        Service Boundary Architecture
+      </span>
+
+      <div class="diagram-controls">
+
+        <button
+          type="button"
+          class="expand-diagram"
+          data-diagram="service-boundary-diagram"
+        >
+          Expand diagram
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="diagram-preview"
+      id="service-boundary-diagram"
+    >
+
+      <pre class="mermaid">
 flowchart LR
 
     accTitle: Universal Loan reusable service boundary map
@@ -1054,36 +1111,25 @@ flowchart LR
 
     MAP --> ROUTE
 
-
     ROUTE --> KYC
-
     ROUTE --> ELIG
-
     ROUTE --> DOC
-
     ROUTE --> CREDIT
-
     ROUTE --> FUL
 
-
     ORCH --> ERROR
-
     ORCH --> MON
 
-
     KYC --> ORCH
-
     ELIG --> ORCH
-
     DOC --> ORCH
-
     CREDIT --> ORCH
-
     FUL --> ORCH
 
-
     ORCH --> SF
-    </pre>
+      </pre>
+
+    </div>
 
   </div>
 
@@ -1113,7 +1159,33 @@ flowchart LR
 
   <div class="diagram-shell">
 
-    <pre class="mermaid">
+    <div class="diagram-toolbar">
+
+      <span class="diagram-toolbar-title">
+        Eligibility Sequence
+      </span>
+
+      <div class="diagram-controls">
+
+        <button
+          type="button"
+          class="expand-diagram"
+          data-diagram="sequence-diagram"
+        >
+          Expand diagram
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="diagram-preview"
+      id="sequence-diagram"
+    >
+
+      <pre class="mermaid">
 sequenceDiagram
 
     accTitle: Eligibility integration sequence
@@ -1187,7 +1259,9 @@ sequenceDiagram
         SF-->>Banker: Stop onboarding
 
     end
-    </pre>
+      </pre>
+
+    </div>
 
   </div>
 
@@ -1262,7 +1336,33 @@ sequenceDiagram
 
   <div class="diagram-shell">
 
-    <pre class="mermaid">
+    <div class="diagram-toolbar">
+
+      <span class="diagram-toolbar-title">
+        Exception & Recovery State Model
+      </span>
+
+      <div class="diagram-controls">
+
+        <button
+          type="button"
+          class="expand-diagram"
+          data-diagram="exception-diagram"
+        >
+          Expand diagram
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="diagram-preview"
+      id="exception-diagram"
+    >
+
+      <pre class="mermaid">
 stateDiagram-v2
 
     accTitle: Integration exception and recovery state model
@@ -1304,7 +1404,9 @@ stateDiagram-v2
     Stop --> [*]
 
     Resolved --> [*]
-    </pre>
+      </pre>
+
+    </div>
 
   </div>
 
@@ -1593,22 +1695,45 @@ stateDiagram-v2
 
 
 
-  <div class="case-layout">
+  <article class="featured-case">
+
+    <span class="case-status">
+      Proof of Concept
+    </span>
 
 
-    <article class="featured-case">
-
-      <span class="case-status">
-        Proof of Concept
-      </span>
+    <h3>
+      Request → Flowgear → Eligibility → Case Update
+    </h3>
 
 
-      <h3>
-        Request → Flowgear → Eligibility → Case Update
-      </h3>
+    <div class="diagram-shell">
+
+      <div class="diagram-toolbar">
+
+        <span class="diagram-toolbar-title">
+          Eligibility Orchestration
+        </span>
+
+        <div class="diagram-controls">
+
+          <button
+            type="button"
+            class="expand-diagram"
+            data-diagram="poc-diagram"
+          >
+            Expand diagram
+          </button>
+
+        </div>
+
+      </div>
 
 
-      <div class="diagram-shell">
+      <div
+        class="diagram-preview"
+        id="poc-diagram"
+      >
 
         <pre class="mermaid">
 flowchart LR
@@ -1659,16 +1784,13 @@ flowchart LR
 
     ELIG --> DECIDE
 
-
     DECIDE -->|"Approved"| PASS
 
     DECIDE -->|"Refer"| REFER
 
     DECIDE -->|"Stop"| FAIL
 
-
     FG -->|"Technical failure"| EXCEPTION
-
 
     PASS --> CASE
 
@@ -1681,96 +1803,90 @@ flowchart LR
 
       </div>
 
+    </div>
+
+  </article>
+
+
+
+  <div class="compact-grid">
+
+    <article class="compact-card">
+
+      <h3>
+        01 · Receive
+      </h3>
+
+      <p>
+        Accept the onboarding request through a defined API contract.
+      </p>
+
     </article>
 
 
+    <article class="compact-card">
 
-    <div class="roadmap">
+      <h3>
+        02 · Validate
+      </h3>
 
-      <details open>
+      <p>
+        Confirm identifiers, data types and required business context.
+      </p>
 
-        <summary>
-          01 · Receive
-        </summary>
-
-        <p>
-          Accept an onboarding request
-          through a defined API contract.
-        </p>
-
-      </details>
+    </article>
 
 
-      <details>
+    <article class="compact-card">
 
-        <summary>
-          02 · Validate
-        </summary>
+      <h3>
+        03 · Transform
+      </h3>
 
-        <p>
-          Confirm required identifiers,
-          data types and business context.
-        </p>
+      <p>
+        Map the application into the eligibility service contract.
+      </p>
 
-      </details>
-
-
-      <details>
-
-        <summary>
-          03 · Transform
-        </summary>
-
-        <p>
-          Map the application
-          into the eligibility-service contract.
-        </p>
-
-      </details>
+    </article>
 
 
-      <details>
+    <article class="compact-card">
 
-        <summary>
-          04 · Invoke
-        </summary>
+      <h3>
+        04 · Invoke
+      </h3>
 
-        <p>
-          Call the eligibility service
-          and capture the response.
-        </p>
+      <p>
+        Call the eligibility service and capture its response.
+      </p>
 
-      </details>
-
-
-      <details>
-
-        <summary>
-          05 · Decide
-        </summary>
-
-        <p>
-          Route approved, referred
-          and stopped applications.
-        </p>
-
-      </details>
+    </article>
 
 
-      <details>
+    <article class="compact-card">
 
-        <summary>
-          06 · Recover
-        </summary>
+      <h3>
+        05 · Decide
+      </h3>
 
-        <p>
-          Route technical failures
-          into an explicit operational exception.
-        </p>
+      <p>
+        Route approved, referred and stopped applications.
+      </p>
 
-      </details>
+    </article>
 
-    </div>
+
+    <article class="compact-card">
+
+      <h3>
+        06 · Recover
+      </h3>
+
+      <p>
+        Route technical failures into an explicit operational exception.
+      </p>
+
+    </article>
 
   </div>
 
@@ -2069,6 +2185,91 @@ flowchart LR
 
 
 <!-- ============================================================
+     FULL-SCREEN DIAGRAM VIEWER
+     ============================================================ -->
+
+<dialog
+  class="diagram-dialog"
+  id="architecture-viewer"
+  aria-labelledby="architecture-viewer-title"
+>
+
+  <div class="diagram-dialog-header">
+
+    <h2 id="architecture-viewer-title">
+      Architecture Diagram
+    </h2>
+
+
+    <div class="diagram-dialog-actions">
+
+      <button
+        type="button"
+        class="diagram-control"
+        id="zoom-out"
+        aria-label="Zoom out"
+      >
+        −
+      </button>
+
+
+      <span
+        class="diagram-zoom-value"
+        id="zoom-value"
+        aria-live="polite"
+      >
+        100%
+      </span>
+
+
+      <button
+        type="button"
+        class="diagram-control"
+        id="zoom-in"
+        aria-label="Zoom in"
+      >
+        +
+      </button>
+
+
+      <button
+        type="button"
+        class="diagram-control"
+        id="zoom-reset"
+      >
+        Reset
+      </button>
+
+
+      <button
+        type="button"
+        class="diagram-dialog-close"
+        id="diagram-close"
+        aria-label="Close architecture diagram"
+      >
+        ×
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="diagram-viewport">
+
+    <div
+      class="diagram-zoom-content"
+      id="diagram-zoom-content"
+    >
+    </div>
+
+  </div>
+
+</dialog>
+
+
+
+<!-- ============================================================
      MERMAID
      ============================================================ -->
 
@@ -2144,6 +2345,162 @@ flowchart LR
     }
 
   });
+
+</script>
+
+
+
+<!-- ============================================================
+     DIAGRAM VIEWER CONTROLS
+     ============================================================ -->
+
+<script>
+
+window.addEventListener("load", () => {
+
+  const dialog =
+    document.getElementById("architecture-viewer");
+
+  const viewer =
+    document.getElementById("diagram-zoom-content");
+
+  const zoomValue =
+    document.getElementById("zoom-value");
+
+  const zoomIn =
+    document.getElementById("zoom-in");
+
+  const zoomOut =
+    document.getElementById("zoom-out");
+
+  const zoomReset =
+    document.getElementById("zoom-reset");
+
+  const closeButton =
+    document.getElementById("diagram-close");
+
+  const viewerTitle =
+    document.getElementById("architecture-viewer-title");
+
+
+  let scale = 1;
+
+
+  function updateZoom() {
+
+    viewer.style.transform =
+      `scale(${scale})`;
+
+    zoomValue.textContent =
+      `${Math.round(scale * 100)}%`;
+
+  }
+
+
+  document
+    .querySelectorAll(".expand-diagram")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const diagramId =
+          button.dataset.diagram;
+
+        const diagram =
+          document.getElementById(diagramId);
+
+        const svg =
+          diagram?.querySelector("svg");
+
+
+        if (!svg) {
+          return;
+        }
+
+
+        viewer.innerHTML = "";
+
+
+        const clone =
+          svg.cloneNode(true);
+
+
+        clone.removeAttribute("width");
+        clone.removeAttribute("height");
+
+
+        viewer.appendChild(clone);
+
+
+        const toolbar =
+          button.closest(".diagram-toolbar");
+
+
+        const title =
+          toolbar?.querySelector(".diagram-toolbar-title");
+
+
+        viewerTitle.textContent =
+          title?.textContent.trim() || "Architecture Diagram";
+
+
+        scale = 1;
+
+        updateZoom();
+
+
+        dialog.showModal();
+
+      });
+
+    });
+
+
+  zoomIn.addEventListener("click", () => {
+
+    scale =
+      Math.min(scale + 0.25, 3);
+
+    updateZoom();
+
+  });
+
+
+  zoomOut.addEventListener("click", () => {
+
+    scale =
+      Math.max(scale - 0.25, 0.5);
+
+    updateZoom();
+
+  });
+
+
+  zoomReset.addEventListener("click", () => {
+
+    scale = 1;
+
+    updateZoom();
+
+  });
+
+
+  closeButton.addEventListener("click", () => {
+
+    dialog.close();
+
+  });
+
+
+  dialog.addEventListener("click", event => {
+
+    if (event.target === dialog) {
+      dialog.close();
+    }
+
+  });
+
+});
 
 </script>
 
