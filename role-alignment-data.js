@@ -1,7 +1,7 @@
 /* =============================================================
    ROLE ALIGNMENT + EVIDENCE DATA
    -------------------------------------------------------------
-   One evidence library.
+   One reusable evidence library.
    Multiple role lenses.
    ============================================================= */
 
@@ -293,7 +293,7 @@ window.ROLE_ALIGNMENTS = {
 
 
     /* ---------------------------------------------------------
-       Homepage tailoring
+       HOMEPAGE TAILORING
        --------------------------------------------------------- */
 
     homepageContext: {
@@ -309,6 +309,11 @@ window.ROLE_ALIGNMENTS = {
 
     },
 
+
+    /*
+     * This controls what appears first when the portfolio
+     * is tailored to this role.
+     */
 
     priorityEvidence: [
 
@@ -345,6 +350,11 @@ window.ROLE_ALIGNMENTS = {
     scoreSummary:
       "The strongest alignment is in discovery, solution shaping, modelling, business-to-technology translation, regulated financial services and architecture thinking. The clearest ramp is direct production experience on Flowgear.",
 
+
+
+    /* =========================================================
+       ROLE REQUIREMENTS
+       ========================================================= */
 
     requirements: [
 
@@ -566,58 +576,85 @@ window.ROLE_ALIGNMENTS = {
     ],
 
 
+
+    /* =========================================================
+       WORKING METHOD
+       ========================================================= */
+
     method: [
 
       {
+
         title:
           "Discover",
 
         text:
           "Customer problem, business outcome, systems, constraints and operating context."
+
       },
 
+
       {
+
         title:
           "Model",
 
         text:
           "Capabilities, actors, processes, information objects and dependencies."
+
       },
 
+
       {
+
         title:
           "Architect",
 
         text:
           "Solution boundaries, services, integration responsibilities and trade-offs."
+
       },
 
+
       {
+
         title:
           "Prove",
 
         text:
           "Prototype or POC the highest-risk assumptions before scaling."
+
       },
 
+
       {
+
         title:
           "Deliver",
 
         text:
           "Translate architecture into requirements, contracts, workflows and decisions."
+
       },
 
+
       {
+
         title:
           "Measure",
 
         text:
           "Customer value, operational effort, reuse, risk and technology outcomes."
+
       }
 
     ],
 
+
+
+    /* =========================================================
+       CAREER BRIDGE
+       ========================================================= */
 
     bridge: {
 
@@ -625,12 +662,19 @@ window.ROLE_ALIGNMENTS = {
         "I did not arrive at solution architecture through infrastructure alone. My path moved through software engineering, business analysis, customer experience, platform transformation and operational solution design.",
 
       path: [
+
         "Software Engineering",
+
         "Business Analysis",
+
         "Salesforce & Platform Transformation",
+
         "Experience / Service Design",
+
         "Customer & Operational Architecture",
+
         "Solution & Integration Architecture"
+
       ],
 
       advantageTitle:
@@ -641,6 +685,11 @@ window.ROLE_ALIGNMENTS = {
 
     },
 
+
+
+    /* =========================================================
+       EXPLICIT GAPS
+       ========================================================= */
 
     gaps: [
 
@@ -678,6 +727,11 @@ window.ROLE_ALIGNMENTS = {
 
     ],
 
+
+
+    /* =========================================================
+       VALUE
+       ========================================================= */
 
     valueTitle:
       "What I would bring into an Integration & Automation CoE.",
@@ -752,6 +806,11 @@ window.ROLE_ALIGNMENTS = {
 
     ],
 
+
+
+    /* =========================================================
+       CLOSE
+       ========================================================= */
 
     closing: {
 
