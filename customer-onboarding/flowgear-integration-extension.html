@@ -16,265 +16,41 @@
 
   <meta
     name="description"
-    content="Conceptual Flowgear iPaaS integration architecture case study by Siya Khanyi demonstrating solution architecture, workflow orchestration, APIs, SQL, C#, object modelling, service boundaries, exception handling and banking operations."
+    content="Conceptual Flowgear iPaaS integration architecture case study by Siya Khanyi demonstrating APIs, orchestration, object modelling, service boundaries, SQL, C#, exception handling and accessible architecture-as-code."
   >
 
   <link
     rel="stylesheet"
-    href="/customer-operations-transformation/style.css?v=7"
+    href="/customer-operations-transformation/style.css?v=8"
   >
 
-
-  <!-- =========================================================
-  PAGE-SPECIFIC STYLES
-  Keeps the existing portfolio design system intact.
-  ========================================================== -->
-
-  <style>
-
-    .integration-page {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-
-    /* ---------------------------------------------------------
-    HERO SUPPORTING LABEL
-    ---------------------------------------------------------- */
-
-    .scope-badge {
-      display: inline-block;
-      border: 1px solid rgba(15, 23, 42, 0.16);
-      border-radius: 999px;
-      padding: 8px 14px;
-      margin-top: 14px;
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
-
-
-    /* ---------------------------------------------------------
-    TECHNICAL FOUNDATION
-    ---------------------------------------------------------- */
-
-    .technical-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-
-    .technical-pill {
-      border: 1px solid rgba(15, 23, 42, 0.13);
-      border-radius: 14px;
-      padding: 14px 10px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-
-    /* ---------------------------------------------------------
-    MERMAID DIAGRAMS
-    ---------------------------------------------------------- */
-
-    .diagram-shell {
-      margin-top: 28px;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 22px;
-      padding: 26px;
-      overflow-x: auto;
-    }
-
-
-    .diagram-shell .mermaid {
-      min-width: 760px;
-      display: flex;
-      justify-content: center;
-    }
-
-
-    .diagram-caption {
-      margin-top: 18px;
-      font-size: 0.92rem;
-      opacity: 0.72;
-    }
-
-
-    /* ---------------------------------------------------------
-    LAYER CARDS
-    ---------------------------------------------------------- */
-
-    .architecture-layer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-
-    .architecture-layer {
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 17px;
-      padding: 18px;
-    }
-
-
-    .architecture-layer h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-
-    /* ---------------------------------------------------------
-    CODE CARDS
-    ---------------------------------------------------------- */
-
-    .code-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 18px;
-      margin-top: 26px;
-    }
-
-
-    .code-card {
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-
-    .code-card-header {
-      padding: 18px 18px 12px 18px;
-    }
-
-
-    .code-card-header h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
-
-
-    .code-card-header p {
-      margin: 0;
-      opacity: 0.72;
-      font-size: 0.88rem;
-    }
-
-
-    .code-card pre {
-      margin: 0;
-      padding: 18px;
-      overflow-x: auto;
-      font-size: 0.83rem;
-      line-height: 1.55;
-    }
-
-
-    /* ---------------------------------------------------------
-    COMPACT CARDS
-    ---------------------------------------------------------- */
-
-    .compact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 15px;
-      margin-top: 24px;
-    }
-
-
-    .compact-card {
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 17px;
-      padding: 18px;
-    }
-
-
-    .compact-card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-
-    /* ---------------------------------------------------------
-    INTEGRATION PATTERNS
-    ---------------------------------------------------------- */
-
-    .pattern-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-
-    .pattern-card {
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 16px;
-      padding: 18px;
-      text-align: center;
-    }
-
-
-    .pattern-card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-
-    /* ---------------------------------------------------------
-    HELPERS
-    ---------------------------------------------------------- */
-
-    .technical-note {
-      margin-top: 18px;
-      opacity: 0.72;
-      font-size: 0.9rem;
-    }
-
-
-    .section-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-
-    @media (max-width: 768px) {
-
-      .diagram-shell {
-        padding: 14px;
-      }
-
-
-      .diagram-shell .mermaid {
-        min-width: 680px;
-      }
-
-
-      .code-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-  </style>
-
 </head>
-
 
 
 <body>
 
 
-<!-- =========================================================
-NAVIGATION
-========================================================== -->
+<!-- ============================================================
+     ACCESSIBILITY
+     ============================================================ -->
 
-<nav class="navbar">
+<a
+  class="skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+
+<nav
+  class="navbar"
+  aria-label="Primary navigation"
+>
 
   <div class="nav-brand">
     Siya Khanyi
@@ -317,9 +93,9 @@ NAVIGATION
 
 
 
-<!-- =========================================================
-HERO
-========================================================== -->
+<!-- ============================================================
+     HERO
+     ============================================================ -->
 
 <header class="hero">
 
@@ -338,13 +114,8 @@ HERO
     <p>
       Extending an existing banking onboarding architecture
       into APIs, service orchestration, data transformation,
-      integration boundaries and executable solution logic.
+      system boundaries and executable integration logic.
     </p>
-
-
-    <span class="scope-badge">
-      Conceptual architecture extension · Applied platform learning
-    </span>
 
 
     <div class="hero-actions">
@@ -380,16 +151,217 @@ HERO
 
 
 
-<main class="integration-page">
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+
+<main
+  class="integration-page"
+  id="main-content"
+>
 
 
-<!-- =========================================================
-ENGINEERING FOUNDATION
-========================================================== -->
+<!-- ============================================================
+     POSITIONING / SCOPE
+     ============================================================ -->
+
+<section
+  class="panel"
+  aria-labelledby="scope-heading"
+>
+
+  <span class="section-kicker">
+    Applied Architecture Exercise
+  </span>
+
+
+  <h2 id="scope-heading">
+    Taking an existing solution into an iPaaS architecture.
+  </h2>
+
+
+  <span class="scope-badge">
+    Conceptual Flowgear extension · Applied platform learning
+  </span>
+
+
+  <p>
+    I revisited the Universal Loan case to test how my existing
+    capability mapping, object modelling, API/service analysis
+    and solution-shaping approach translates into an integration
+    architecture using Flowgear.
+  </p>
+
+
+  <p class="technical-note">
+    This is not presented as prior production implementation
+    experience on Flowgear.
+  </p>
+
+</section>
+
+
+
+<!-- ============================================================
+     LEGEND
+     ============================================================ -->
+
+<section
+  class="panel"
+  aria-labelledby="legend-heading"
+>
+
+  <span class="section-kicker">
+    Diagram Legend
+  </span>
+
+
+  <h2 id="legend-heading">
+    How to read the architecture.
+  </h2>
+
+
+  <div class="architecture-legend">
+
+
+    <div class="legend-item">
+
+      <span
+        class="legend-symbol legend-experience"
+        aria-hidden="true"
+      >
+        E
+      </span>
+
+      <div>
+
+        <strong>
+          Experience / Workflow
+        </strong>
+
+        <span>
+          Customer, banker and case-management layer
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="legend-item">
+
+      <span
+        class="legend-symbol legend-integration"
+        aria-hidden="true"
+      >
+        I
+      </span>
+
+      <div>
+
+        <strong>
+          Integration / Orchestration
+        </strong>
+
+        <span>
+          Flowgear, transformation, routing and execution
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="legend-item">
+
+      <span
+        class="legend-symbol legend-service"
+        aria-hidden="true"
+      >
+        S
+      </span>
+
+      <div>
+
+        <strong>
+          Business Service
+        </strong>
+
+        <span>
+          Reusable capability exposed through an interface
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="legend-item">
+
+      <span
+        class="legend-symbol legend-system"
+        aria-hidden="true"
+      >
+        R
+      </span>
+
+      <div>
+
+        <strong>
+          System of Record
+        </strong>
+
+        <span>
+          Authoritative owner of business information
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="legend-item">
+
+      <span
+        class="legend-symbol legend-exception"
+        aria-hidden="true"
+      >
+        !
+      </span>
+
+      <div>
+
+        <strong>
+          Decision / Exception
+        </strong>
+
+        <span>
+          Branch, failure or operational intervention
+        </span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     ENGINEERING FOUNDATION
+     ============================================================ -->
 
 <section
   class="panel"
   id="engineering"
+  aria-labelledby="engineering-heading"
 >
 
   <span class="section-kicker">
@@ -397,7 +369,7 @@ ENGINEERING FOUNDATION
   </span>
 
 
-  <h2>
+  <h2 id="engineering-heading">
     Technical capability behind the architecture.
   </h2>
 
@@ -456,22 +428,23 @@ ENGINEERING FOUNDATION
 
 
   <p class="technical-note">
-    My engineering foundation supports the architecture work:
-    understanding service contracts, data structures, system behaviour,
-    integration dependencies and implementation feasibility.
+    My software-engineering foundation supports the architecture work:
+    understanding contracts, data structures, system behaviour,
+    dependencies and implementation feasibility.
   </p>
 
 </section>
 
 
 
-<!-- =========================================================
-TARGET ARCHITECTURE
-========================================================== -->
+<!-- ============================================================
+     TARGET ARCHITECTURE
+     ============================================================ -->
 
 <section
   class="panel"
   id="architecture"
+  aria-labelledby="architecture-heading"
 >
 
   <span class="section-kicker">
@@ -479,7 +452,7 @@ TARGET ARCHITECTURE
   </span>
 
 
-  <h2>
+  <h2 id="architecture-heading">
     Separate customer workflow from cross-system orchestration.
   </h2>
 
@@ -489,50 +462,93 @@ TARGET ARCHITECTURE
     <pre class="mermaid">
 flowchart TB
 
-    CHANNEL["Customer / Banker / Channel"]
+    accTitle: Universal Loan and Flowgear target integration architecture
 
-    SF["Salesforce Case + Onboarding<br/>Customer context · Tasks · Case state"]
+    accDescr: A customer or banker works through Salesforce. Salesforce sends structured requests to Flowgear. Flowgear orchestrates reusable KYC, eligibility, document, credit and fulfilment services. Authoritative business information remains within downstream systems of record. Flowgear returns operational state to Salesforce.
 
-    FG["Flowgear iPaaS<br/>Orchestrate · Transform · Route · Retry · Monitor"]
+    classDef experience fill:#EAF2FF,stroke:#005FCC,color:#0B1220,stroke-width:2px;
 
-    subgraph SERVICES["Enterprise Services"]
-        KYC["KYC / FICA"]
-        ELIG["Eligibility"]
-        DOC["Documents"]
-        CREDIT["Credit / Risk"]
-        FULFIL["Fulfilment"]
+    classDef integration fill:#F5EEFB,stroke:#5B2C83,color:#0B1220,stroke-width:4px;
+
+    classDef service fill:#ECFDF3,stroke:#1B5E20,color:#0B1220,stroke-width:2px,stroke-dasharray:7 4;
+
+    classDef system fill:#F8FAFC,stroke:#334155,color:#0B1220,stroke-width:4px;
+
+    CHANNEL["E · Customer / Banker / Channel"]:::experience
+
+    SF["E · Salesforce Case + Onboarding<br/>Customer context · Tasks · Case state"]:::experience
+
+    FG(["I · FLOWGEAR iPaaS<br/>Orchestrate · Transform · Route · Retry · Monitor"]):::integration
+
+    subgraph SERVICES["Reusable Business Services"]
+
+        KYC["S · KYC / FICA"]:::service
+
+        ELIG["S · Eligibility"]:::service
+
+        DOC["S · Documents"]:::service
+
+        CREDIT["S · Credit / Risk"]:::service
+
+        FULFIL["S · Fulfilment"]:::service
+
     end
+
 
     subgraph RECORDS["Systems of Record"]
-        CUSTOMER["Customer / CRM"]
-        CORE["Core Banking"]
-        DOCSTORE["Document Repository"]
-        RISKSYS["Credit / Risk System"]
-        SERVICING["Servicing Platform"]
+
+        CUSTOMER[["R · Customer / CRM"]]:::system
+
+        CORE[["R · Core Banking"]]:::system
+
+        DOCSTORE[["R · Document Repository"]]:::system
+
+        RISKSYS[["R · Credit / Risk System"]]:::system
+
+        SERVICING[["R · Servicing Platform"]]:::system
+
     end
+
 
     CHANNEL -->|"Business intent"| SF
 
     SF -->|"REST / JSON request"| FG
 
+
     FG --> KYC
+
     FG --> ELIG
+
     FG --> DOC
+
     FG --> CREDIT
+
     FG --> FULFIL
 
+
     KYC --> CUSTOMER
+
     ELIG --> CORE
+
     DOC --> DOCSTORE
+
     CREDIT --> RISKSYS
+
     FULFIL --> CORE
+
     FULFIL --> SERVICING
 
+
     KYC -->|"Result"| FG
+
     ELIG -->|"Decision"| FG
+
     DOC -->|"Readiness"| FG
+
     CREDIT -->|"Decision"| FG
+
     FULFIL -->|"Status"| FG
+
 
     FG -->|"Operational state"| SF
     </pre>
@@ -541,10 +557,54 @@ flowchart TB
 
 
   <p class="diagram-caption">
-    Salesforce manages the colleague workflow.
-    Flowgear coordinates cross-system execution.
-    Source systems retain authoritative data ownership.
+    Colour reinforces meaning, but the E / I / S / R labels,
+    node shape and border treatment carry the same information.
   </p>
+
+
+  <details class="diagram-text-alternative">
+
+    <summary>
+      Read this architecture as text
+    </summary>
+
+
+    <ol>
+
+      <li>
+        A customer or banker starts or progresses onboarding.
+      </li>
+
+      <li>
+        Salesforce manages the colleague workflow and case state.
+      </li>
+
+      <li>
+        Salesforce sends a structured integration request to Flowgear.
+      </li>
+
+      <li>
+        Flowgear validates, transforms and routes the request.
+      </li>
+
+      <li>
+        Flowgear invokes reusable KYC, eligibility,
+        document, credit and fulfilment services.
+      </li>
+
+      <li>
+        Downstream systems remain authoritative owners
+        of their business information.
+      </li>
+
+      <li>
+        Flowgear returns an operational result
+        that Salesforce can use.
+      </li>
+
+    </ol>
+
+  </details>
 
 
 
@@ -553,7 +613,7 @@ flowchart TB
     <article class="architecture-layer">
 
       <h3>
-        Experience Layer
+        E · Experience
       </h3>
 
       <p>
@@ -567,7 +627,7 @@ flowchart TB
     <article class="architecture-layer">
 
       <h3>
-        Integration Layer
+        I · Integration
       </h3>
 
       <p>
@@ -581,7 +641,7 @@ flowchart TB
     <article class="architecture-layer">
 
       <h3>
-        Service Layer
+        S · Services
       </h3>
 
       <p>
@@ -595,7 +655,7 @@ flowchart TB
     <article class="architecture-layer">
 
       <h3>
-        Systems of Record
+        R · Systems of Record
       </h3>
 
       <p>
@@ -611,18 +671,21 @@ flowchart TB
 
 
 
-<!-- =========================================================
-IMPLEMENTATION THINKING
-========================================================== -->
+<!-- ============================================================
+     CONTRACTS + CODE
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="implementation-heading"
+>
 
   <span class="section-kicker">
     Implementation Thinking
   </span>
 
 
-  <h2>
+  <h2 id="implementation-heading">
     Architecture down to contracts, code and data.
   </h2>
 
@@ -630,18 +693,18 @@ IMPLEMENTATION THINKING
   <div class="code-grid">
 
 
-    <!-- API CONTRACT -->
+    <!-- OPENAPI -->
 
     <article class="code-card">
 
       <div class="code-card-header">
 
         <h3>
-          OpenAPI · Eligibility Contract
+          OpenAPI · Service Contract
         </h3>
 
         <p>
-          Illustrative service boundary
+          Illustrative eligibility boundary
         </p>
 
       </div>
@@ -746,7 +809,7 @@ IMPLEMENTATION THINKING
         </h3>
 
         <p>
-          Retrieve required application state
+          Retrieve application state
         </p>
 
       </div>
@@ -763,25 +826,27 @@ WHERE application_id = @applicationId;</code></pre>
 
     </article>
 
+
   </div>
 
 
   <p class="technical-note">
-    These are illustrative implementation artefacts for the
-    conceptual POC — not representations of production bank code.
+    These are illustrative architecture and POC artefacts,
+    not production bank code.
   </p>
 
 </section>
 
 
 
-<!-- =========================================================
-OBJECT MODEL
-========================================================== -->
+<!-- ============================================================
+     OBJECT MODEL
+     ============================================================ -->
 
 <section
   class="panel"
   id="objects"
+  aria-labelledby="objects-heading"
 >
 
   <span class="section-kicker">
@@ -789,8 +854,8 @@ OBJECT MODEL
   </span>
 
 
-  <h2>
-    Model the business information before designing integration.
+  <h2 id="objects-heading">
+    Business meaning first. Integration follows.
   </h2>
 
 
@@ -798,6 +863,10 @@ OBJECT MODEL
 
     <pre class="mermaid">
 classDiagram
+
+    accTitle: Universal Loan onboarding business object model
+
+    accDescr: The model shows the principal information entities participating in onboarding. A customer submits applications for a product. Applications require documents and are associated with eligibility results, credit decisions, an operational case and eventual fulfilment state.
 
     class Customer {
         +customerId
@@ -849,39 +918,84 @@ classDiagram
     }
 
     Customer "1" --> "*" Application : submits
+
     Application "*" --> "1" Product : appliesFor
+
     Application "1" --> "*" Document : requires
+
     Application "1" --> "1" EligibilityResult : evaluatedBy
+
     Application "1" --> "0..1" CreditDecision : receives
+
     Application "1" --> "1" Case : trackedBy
+
     Application "1" --> "0..1" FulfilmentState : progressesTo
     </pre>
 
   </div>
 
 
-  <p class="diagram-caption">
-    Business objects are modelled independently of the technology
-    that currently stores or processes them.
-  </p>
+  <details class="diagram-text-alternative">
+
+    <summary>
+      Read this object model as text
+    </summary>
+
+
+    <ol>
+
+      <li>
+        A customer may submit multiple applications.
+      </li>
+
+      <li>
+        Each application relates to one product.
+      </li>
+
+      <li>
+        An application may require multiple documents.
+      </li>
+
+      <li>
+        Eligibility produces a structured result.
+      </li>
+
+      <li>
+        Credit may produce a decision and conditions.
+      </li>
+
+      <li>
+        A case tracks operational work around the application.
+      </li>
+
+      <li>
+        Successful progression creates a fulfilment state.
+      </li>
+
+    </ol>
+
+  </details>
 
 </section>
 
 
 
-<!-- =========================================================
-SERVICE BOUNDARY MAP
-========================================================== -->
+<!-- ============================================================
+     SERVICE BOUNDARY MAP
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="services-heading"
+>
 
   <span class="section-kicker">
     Service Boundary Map
   </span>
 
 
-  <h2>
-    Reusable capabilities instead of journey-specific integrations.
+  <h2 id="services-heading">
+    Reusable capability instead of journey-specific integration.
   </h2>
 
 
@@ -890,49 +1004,83 @@ SERVICE BOUNDARY MAP
     <pre class="mermaid">
 flowchart LR
 
-    subgraph EXPERIENCE["Experience"]
-        BANKER["Banker"]
-        SF["Salesforce"]
-    end
+    accTitle: Universal Loan reusable service boundary map
 
-    subgraph IPAAS["Flowgear Integration Layer"]
-        API["API Contracts"]
-        ORCH["Orchestration"]
-        MAP["Transformation"]
-        ROUTE["Routing"]
-        ERROR["Exception Handling"]
-        MON["Monitoring"]
-    end
+    accDescr: Salesforce sits in the experience layer. Flowgear contains integration concerns including contracts, orchestration, transformation, routing, exception handling and monitoring. Reusable KYC, eligibility, document, credit and fulfilment services sit behind the integration layer.
 
-    subgraph BUSINESS["Reusable Business Services"]
-        KYC["KYC Service"]
-        ELIG["Eligibility Service"]
-        DOC["Document Service"]
-        CREDIT["Credit Service"]
-        FUL["Fulfilment Service"]
-    end
+    classDef experience fill:#EAF2FF,stroke:#005FCC,color:#0B1220,stroke-width:2px;
+
+    classDef integration fill:#F5EEFB,stroke:#5B2C83,color:#0B1220,stroke-width:4px;
+
+    classDef service fill:#ECFDF3,stroke:#1B5E20,color:#0B1220,stroke-width:2px,stroke-dasharray:7 4;
+
+
+    BANKER["E · Banker"]:::experience
+
+    SF["E · Salesforce"]:::experience
+
+
+    API(["I · API Contracts"]):::integration
+
+    ORCH(["I · Orchestration"]):::integration
+
+    MAP(["I · Transformation"]):::integration
+
+    ROUTE(["I · Routing"]):::integration
+
+    ERROR(["I · Exception Handling"]):::integration
+
+    MON(["I · Monitoring"]):::integration
+
+
+    KYC["S · KYC"]:::service
+
+    ELIG["S · Eligibility"]:::service
+
+    DOC["S · Documents"]:::service
+
+    CREDIT["S · Credit"]:::service
+
+    FUL["S · Fulfilment"]:::service
+
 
     BANKER --> SF
+
     SF --> API
 
     API --> ORCH
+
     ORCH --> MAP
+
     MAP --> ROUTE
 
+
     ROUTE --> KYC
+
     ROUTE --> ELIG
+
     ROUTE --> DOC
+
     ROUTE --> CREDIT
+
     ROUTE --> FUL
 
+
     ORCH --> ERROR
+
     ORCH --> MON
 
+
     KYC --> ORCH
+
     ELIG --> ORCH
+
     DOC --> ORCH
+
     CREDIT --> ORCH
+
     FUL --> ORCH
+
 
     ORCH --> SF
     </pre>
@@ -943,13 +1091,14 @@ flowchart LR
 
 
 
-<!-- =========================================================
-SEQUENCE DIAGRAM
-========================================================== -->
+<!-- ============================================================
+     SEQUENCE DIAGRAM
+     ============================================================ -->
 
 <section
   class="panel"
   id="sequence"
+  aria-labelledby="sequence-heading"
 >
 
   <span class="section-kicker">
@@ -957,7 +1106,7 @@ SEQUENCE DIAGRAM
   </span>
 
 
-  <h2>
+  <h2 id="sequence-heading">
     Eligibility decision — end to end.
   </h2>
 
@@ -967,32 +1116,42 @@ SEQUENCE DIAGRAM
     <pre class="mermaid">
 sequenceDiagram
 
+    accTitle: Eligibility integration sequence
+
+    accDescr: The banker submits an onboarding step in Salesforce. Salesforce sends an eligibility request to Flowgear. Flowgear validates and maps the request before calling the eligibility service. Approved applications proceed to credit and potentially fulfilment. Referred applications route to manual review. Ineligible applications stop.
+
     autonumber
 
     participant Banker
-    participant SF as Salesforce
-    participant FG as Flowgear
-    participant EL as Eligibility API
-    participant CR as Credit Risk
-    participant Core as Core Banking
+
+    participant SF as E · Salesforce
+
+    participant FG as I · Flowgear
+
+    participant EL as S · Eligibility API
+
+    participant CR as S · Credit / Risk
+
+    participant Core as R · Core Banking
+
 
     Banker->>SF: Submit onboarding step
 
     SF->>FG: POST eligibility request
 
-    Note over FG:
-      Validate request
-      Map canonical payload
+    Note over FG: Validate contract<br/>Map canonical payload
 
     FG->>EL: Evaluate eligibility
 
     EL-->>FG: APPROVED / REFER / STOP
+
 
     alt Approved
 
         FG->>CR: Request credit assessment
 
         CR-->>FG: Credit decision
+
 
         alt Credit approved
 
@@ -1004,6 +1163,7 @@ sequenceDiagram
 
             SF-->>Banker: Continue onboarding
 
+
         else Credit referred
 
             FG-->>SF: MANUAL_REVIEW
@@ -1012,11 +1172,13 @@ sequenceDiagram
 
         end
 
+
     else Refer
 
         FG-->>SF: REFERRED
 
         SF-->>Banker: Manual assessment required
+
 
     else Stop
 
@@ -1029,23 +1191,72 @@ sequenceDiagram
 
   </div>
 
+
+  <details class="diagram-text-alternative">
+
+    <summary>
+      Read this sequence as text
+    </summary>
+
+
+    <ol>
+
+      <li>
+        The banker submits the onboarding step.
+      </li>
+
+      <li>
+        Salesforce calls Flowgear.
+      </li>
+
+      <li>
+        Flowgear validates and maps the request.
+      </li>
+
+      <li>
+        Flowgear calls the eligibility API.
+      </li>
+
+      <li>
+        Approved cases continue to credit.
+      </li>
+
+      <li>
+        Referred cases create a manual-review state.
+      </li>
+
+      <li>
+        Ineligible cases stop.
+      </li>
+
+      <li>
+        Successful credit progression moves toward fulfilment.
+      </li>
+
+    </ol>
+
+  </details>
+
 </section>
 
 
 
-<!-- =========================================================
-EXCEPTION FLOW
-========================================================== -->
+<!-- ============================================================
+     EXCEPTION ARCHITECTURE
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="exceptions-heading"
+>
 
   <span class="section-kicker">
     Exception Architecture
   </span>
 
 
-  <h2>
-    Failure is designed — not discovered later.
+  <h2 id="exceptions-heading">
+    Failure is part of the architecture.
   </h2>
 
 
@@ -1054,35 +1265,49 @@ EXCEPTION FLOW
     <pre class="mermaid">
 stateDiagram-v2
 
+    accTitle: Integration exception and recovery state model
+
+    accDescr: The integration validates incoming requests, invokes a service and either receives a decision or handles failures. Invalid data becomes a data exception. Timeouts may retry before becoming a technical exception. Approved decisions continue, referrals move to manual review and declined decisions stop. Exceptions create operational tasks.
+
     [*] --> RequestReceived
 
     RequestReceived --> ValidateRequest
 
     ValidateRequest --> InvokeService : valid
+
     ValidateRequest --> DataException : invalid
 
     InvokeService --> DecisionReceived : success
+
     InvokeService --> Retry : timeout
 
     Retry --> InvokeService : retry available
+
     Retry --> TechnicalException : retry exhausted
 
     DecisionReceived --> Continue : approved
+
     DecisionReceived --> ManualReview : refer
+
     DecisionReceived --> Stop : declined
 
     DataException --> OperationalTask
+
     TechnicalException --> OperationalTask
+
     ManualReview --> OperationalTask
 
     OperationalTask --> Resolved
 
     Continue --> [*]
+
     Stop --> [*]
+
     Resolved --> [*]
     </pre>
 
   </div>
+
 
 
   <div class="compact-grid">
@@ -1090,11 +1315,12 @@ stateDiagram-v2
     <article class="compact-card">
 
       <h3>
-        Technical failure
+        ! · Timeout
       </h3>
 
       <p>
-        Retry first, then expose an operational exception.
+        Retry first, then expose
+        an operational exception.
       </p>
 
     </article>
@@ -1103,11 +1329,12 @@ stateDiagram-v2
     <article class="compact-card">
 
       <h3>
-        Invalid data
+        ! · Invalid data
       </h3>
 
       <p>
-        Stop malformed information before downstream execution.
+        Stop malformed information
+        before downstream execution.
       </p>
 
     </article>
@@ -1116,11 +1343,12 @@ stateDiagram-v2
     <article class="compact-card">
 
       <h3>
-        Business exception
+        ! · Business exception
       </h3>
 
       <p>
-        Refer policy or decision outcomes to an explicit route.
+        Refer policy or decision outcomes
+        to an explicit route.
       </p>
 
     </article>
@@ -1129,11 +1357,12 @@ stateDiagram-v2
     <article class="compact-card">
 
       <h3>
-        Recovery
+        ! · Recovery
       </h3>
 
       <p>
-        Give operations a clear owner, state and next action.
+        Give operations an owner,
+        state and next action.
       </p>
 
     </article>
@@ -1144,18 +1373,21 @@ stateDiagram-v2
 
 
 
-<!-- =========================================================
-INTEGRATION PATTERNS
-========================================================== -->
+<!-- ============================================================
+     INTEGRATION PATTERNS
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="patterns-heading"
+>
 
   <span class="section-kicker">
     Integration Patterns
   </span>
 
 
-  <h2>
+  <h2 id="patterns-heading">
     Patterns I would evaluate against the use case.
   </h2>
 
@@ -1233,18 +1465,21 @@ INTEGRATION PATTERNS
 
 
 
-<!-- =========================================================
-ARCHITECTURE DECISIONS
-========================================================== -->
+<!-- ============================================================
+     ARCHITECTURE DECISIONS
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="decisions-heading"
+>
 
   <span class="section-kicker">
     Architecture Decisions
   </span>
 
 
-  <h2>
+  <h2 id="decisions-heading">
     Five deliberate boundaries.
   </h2>
 
@@ -1258,7 +1493,8 @@ ARCHITECTURE DECISIONS
       </h3>
 
       <p>
-        Case context, tasks and colleague interaction remain operational concerns.
+        Case context, tasks and colleague interaction
+        remain operational concerns.
       </p>
 
     </article>
@@ -1271,7 +1507,8 @@ ARCHITECTURE DECISIONS
       </h3>
 
       <p>
-        Cross-system execution is separated from the user interface.
+        Cross-system execution is separated
+        from the user interface.
       </p>
 
     </article>
@@ -1284,7 +1521,8 @@ ARCHITECTURE DECISIONS
       </h3>
 
       <p>
-        Middleware coordinates information without becoming another master-data store.
+        Middleware coordinates information
+        without becoming another master-data store.
       </p>
 
     </article>
@@ -1297,7 +1535,8 @@ ARCHITECTURE DECISIONS
       </h3>
 
       <p>
-        Eligibility, compliance and fulfilment are enterprise capabilities, not one-off integrations.
+        Eligibility, compliance and fulfilment
+        are enterprise capabilities.
       </p>
 
     </article>
@@ -1310,7 +1549,8 @@ ARCHITECTURE DECISIONS
       </h3>
 
       <p>
-        Technical and business failure states have defined ownership and recovery paths.
+        Technical and business failure states
+        have defined ownership and recovery.
       </p>
 
     </article>
@@ -1321,13 +1561,14 @@ ARCHITECTURE DECISIONS
 
 
 
-<!-- =========================================================
-FLOWGEAR POC
-========================================================== -->
+<!-- ============================================================
+     FLOWGEAR POC
+     ============================================================ -->
 
 <section
   class="case-section"
   id="poc"
+  aria-labelledby="poc-heading"
 >
 
   <div class="case-copy">
@@ -1337,20 +1578,23 @@ FLOWGEAR POC
     </span>
 
 
-    <h2>
+    <h2 id="poc-heading">
       Onboarding Eligibility Orchestration
     </h2>
 
 
     <p>
-      One small integration chain to demonstrate
-      architecture, implementation logic and exception handling.
+      One integration chain to demonstrate
+      architecture, implementation logic
+      and exception handling.
     </p>
 
   </div>
 
 
+
   <div class="case-layout">
+
 
     <article class="featured-case">
 
@@ -1369,27 +1613,41 @@ FLOWGEAR POC
         <pre class="mermaid">
 flowchart LR
 
-    REQUEST["REST Request"]
+    accTitle: Proposed Flowgear onboarding eligibility proof of concept
 
-    VALIDATE["Validate Contract"]
+    accDescr: A REST onboarding request is validated and mapped. Flowgear calls an eligibility API. Approved applications continue, referred applications move to manual review and stopped applications become ineligible. Technical failures create an exception route. All outcomes update the Salesforce case.
 
-    MAP["Map Payload"]
+    classDef experience fill:#EAF2FF,stroke:#005FCC,color:#0B1220,stroke-width:2px;
 
-    FG["Flowgear Workflow"]
+    classDef integration fill:#F5EEFB,stroke:#5B2C83,color:#0B1220,stroke-width:4px;
 
-    ELIG["Eligibility API"]
+    classDef service fill:#ECFDF3,stroke:#1B5E20,color:#0B1220,stroke-width:2px,stroke-dasharray:7 4;
 
-    DECIDE{"Decision"}
+    classDef exception fill:#FFF1F0,stroke:#B42318,color:#0B1220,stroke-width:3px;
 
-    PASS["Continue"]
 
-    REFER["Manual Review"]
+    REQUEST["E · REST Request"]:::experience
 
-    FAIL["Stop"]
+    VALIDATE(["I · Validate Contract"]):::integration
 
-    EXCEPTION["Exception Route"]
+    MAP(["I · Map Payload"]):::integration
 
-    CASE["Update Salesforce Case"]
+    FG(["I · Flowgear Workflow"]):::integration
+
+    ELIG["S · Eligibility API"]:::service
+
+    DECIDE{"! · Decision"}:::exception
+
+    PASS["E · Continue"]:::experience
+
+    REFER["! · Manual Review"]:::exception
+
+    FAIL["! · Stop"]:::exception
+
+    EXCEPTION["! · Technical Exception"]:::exception
+
+    CASE["E · Update Salesforce Case"]:::experience
+
 
     REQUEST --> VALIDATE
 
@@ -1401,21 +1659,30 @@ flowchart LR
 
     ELIG --> DECIDE
 
+
     DECIDE -->|"Approved"| PASS
+
     DECIDE -->|"Refer"| REFER
+
     DECIDE -->|"Stop"| FAIL
+
 
     FG -->|"Technical failure"| EXCEPTION
 
+
     PASS --> CASE
+
     REFER --> CASE
+
     FAIL --> CASE
+
     EXCEPTION --> CASE
         </pre>
 
       </div>
 
     </article>
+
 
 
     <div class="roadmap">
@@ -1427,7 +1694,8 @@ flowchart LR
         </summary>
 
         <p>
-          Accept an onboarding request through a defined API contract.
+          Accept an onboarding request
+          through a defined API contract.
         </p>
 
       </details>
@@ -1440,7 +1708,8 @@ flowchart LR
         </summary>
 
         <p>
-          Confirm required identifiers, types and business context.
+          Confirm required identifiers,
+          data types and business context.
         </p>
 
       </details>
@@ -1453,7 +1722,8 @@ flowchart LR
         </summary>
 
         <p>
-          Map the application into the eligibility-service contract.
+          Map the application
+          into the eligibility-service contract.
         </p>
 
       </details>
@@ -1466,7 +1736,8 @@ flowchart LR
         </summary>
 
         <p>
-          Call the eligibility service and capture the response.
+          Call the eligibility service
+          and capture the response.
         </p>
 
       </details>
@@ -1479,7 +1750,8 @@ flowchart LR
         </summary>
 
         <p>
-          Route approved, referred and stopped applications.
+          Route approved, referred
+          and stopped applications.
         </p>
 
       </details>
@@ -1492,7 +1764,8 @@ flowchart LR
         </summary>
 
         <p>
-          Route technical failures into an explicit operational exception.
+          Route technical failures
+          into an explicit operational exception.
         </p>
 
       </details>
@@ -1501,19 +1774,70 @@ flowchart LR
 
   </div>
 
+
+
+  <details class="diagram-text-alternative">
+
+    <summary>
+      Read the POC as text
+    </summary>
+
+
+    <ol>
+
+      <li>
+        Receive an onboarding API request.
+      </li>
+
+      <li>
+        Validate the contract.
+      </li>
+
+      <li>
+        Transform the application data.
+      </li>
+
+      <li>
+        Call the eligibility service through Flowgear.
+      </li>
+
+      <li>
+        Route approved, referred and stopped outcomes.
+      </li>
+
+      <li>
+        Route technical failures to an exception path.
+      </li>
+
+      <li>
+        Update Salesforce with the operational result.
+      </li>
+
+    </ol>
+
+  </details>
+
 </section>
 
 
 
-<!-- =========================================================
-WHY THIS ARCHITECTURE
-========================================================== -->
+<!-- ============================================================
+     VALUE
+     ============================================================ -->
 
-<section class="panel">
+<section
+  class="panel"
+  aria-labelledby="value-heading"
+>
 
   <span class="section-kicker">
     Why This Architecture
   </span>
+
+
+  <h2 id="value-heading">
+    Business value from clearer technical boundaries.
+  </h2>
 
 
   <div class="compact-grid">
@@ -1525,7 +1849,8 @@ WHY THIS ARCHITECTURE
       </h3>
 
       <p>
-        The operational workflow does not depend directly on every downstream system.
+        Operational workflow does not depend
+        directly on every downstream system.
       </p>
 
     </article>
@@ -1538,7 +1863,8 @@ WHY THIS ARCHITECTURE
       </h3>
 
       <p>
-        Services can support future journeys and channels.
+        Services can support
+        future journeys and channels.
       </p>
 
     </article>
@@ -1551,7 +1877,8 @@ WHY THIS ARCHITECTURE
       </h3>
 
       <p>
-        Failures become traceable operational states.
+        Failures become traceable
+        operational states.
       </p>
 
     </article>
@@ -1564,12 +1891,14 @@ WHY THIS ARCHITECTURE
       </h3>
 
       <p>
-        Systems can evolve behind stable integration boundaries.
+        Systems can evolve
+        behind stable integration boundaries.
       </p>
 
     </article>
 
   </div>
+
 
 
   <div class="section-actions">
@@ -1601,9 +1930,9 @@ WHY THIS ARCHITECTURE
 
 
   <p class="technical-note">
-    This is a conceptual Flowgear architecture extension created as
-    applied platform learning. It is not presented as prior production
-    implementation experience on Flowgear.
+    Conceptual Flowgear architecture extension created as
+    applied platform learning. It is not presented as prior
+    production Flowgear implementation.
   </p>
 
 </section>
@@ -1614,13 +1943,14 @@ WHY THIS ARCHITECTURE
 
 
 
-<!-- =========================================================
-FOOTER
-========================================================== -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 
 <footer class="site-footer">
 
   <div class="footer-grid">
+
 
     <div class="footer-brand">
 
@@ -1639,6 +1969,7 @@ FOOTER
       </p>
 
     </div>
+
 
 
     <div class="footer-column">
@@ -1670,6 +2001,7 @@ FOOTER
     </div>
 
 
+
     <div class="footer-column">
 
       <h4>
@@ -1699,6 +2031,7 @@ FOOTER
     </div>
 
 
+
     <div class="footer-column">
 
       <h4>
@@ -1714,6 +2047,7 @@ FOOTER
       </a>
 
     </div>
+
 
   </div>
 
@@ -1734,10 +2068,9 @@ FOOTER
 
 
 
-<!-- =========================================================
-MERMAID
-Architecture-as-code rendering
-========================================================== -->
+<!-- ============================================================
+     MERMAID
+     ============================================================ -->
 
 <script type="module">
 
@@ -1751,15 +2084,56 @@ Architecture-as-code rendering
 
     securityLevel: "loose",
 
-    theme: "neutral",
+    theme: "base",
+
+    themeVariables: {
+
+      fontFamily:
+        "Inter, ui-sans-serif, system-ui, sans-serif",
+
+      primaryTextColor:
+        "#0B1220",
+
+      lineColor:
+        "#334155",
+
+      textColor:
+        "#0B1220",
+
+      mainBkg:
+        "#FFFFFF",
+
+      clusterBkg:
+        "#F8FAFC",
+
+      clusterBorder:
+        "#94A3B8",
+
+      edgeLabelBackground:
+        "#FFFFFF",
+
+      noteBkgColor:
+        "#FFF7DD",
+
+      noteTextColor:
+        "#0B1220",
+
+      noteBorderColor:
+        "#7A5200"
+
+    },
+
 
     flowchart: {
 
       curve: "basis",
 
-      htmlLabels: true
+      htmlLabels: true,
+
+      useMaxWidth: true
 
     },
+
 
     sequence: {
 
