@@ -16,7 +16,7 @@
 
   <meta
     name="description"
-    content="Portfolio of Siya Khanyi — a customer, operations and solution practitioner working across product, business, architecture, service design, integration and digital transformation."
+    content="Customer, operations and solution architecture portfolio by Siya Khanyi, covering banking transformation, capability mapping, service architecture, integration thinking, Salesforce ecosystems and future-state solution design."
   >
 
   <link
@@ -71,6 +71,10 @@
       Case Studies
     </a>
 
+    <a href="role-alignment.html?role=chosen-senior-solutions-architect">
+      Role Alignment
+    </a>
+
     <a href="#technical">
       Technical
     </a>
@@ -95,13 +99,13 @@
 
 
     <h1>
-      I translate business problems into scalable solutions.
+      I translate complex business problems into scalable solutions.
     </h1>
 
 
     <p>
       I work across customer, operations, product and technology —
-      translating ambiguous business problems into capability models,
+      turning ambiguous problems into capability models,
       service architectures, information structures,
       integration boundaries and delivery-ready solution direction.
     </p>
@@ -109,12 +113,9 @@
 
     <p>
       My background spans software engineering,
-      business analysis, experience design,
-      service design and regulated financial services,
-      giving me a practical bridge between
-      what customers need,
-      how organisations operate,
-      and how technology should enable both.
+      business analysis, experience and service design,
+      Salesforce-enabled transformation
+      and regulated financial services.
     </p>
 
 
@@ -138,9 +139,9 @@
 
       <a
         class="button secondary"
-        href="#technical"
+        href="role-alignment.html?role=chosen-senior-solutions-architect"
       >
-        Technical Foundation
+        View Role Alignment
       </a>
 
     </div>
@@ -161,6 +162,7 @@
 <section
   class="panel intro-panel"
   id="about"
+  aria-labelledby="about-heading"
 >
 
   <span class="section-kicker">
@@ -168,7 +170,7 @@
   </span>
 
 
-  <h2>
+  <h2 id="about-heading">
     Start with the operating problem, not the interface.
   </h2>
 
@@ -185,15 +187,18 @@
 
 
   <p>
-    This helps distinguish
+    That helps distinguish
     a customer-experience problem
-    from a workflow problem,
-    a workflow problem from an information problem,
+    from a process problem,
+    a process problem from an information problem,
     and an information problem from a technology gap.
   </p>
 
 
-  <div class="flow">
+  <div
+    class="flow"
+    aria-label="Solution analysis approach"
+  >
 
     <span>
       Customer Need
@@ -240,6 +245,7 @@
 <section
   class="panel"
   id="solution-analysis"
+  aria-labelledby="solution-analysis-heading"
 >
 
   <span class="section-kicker">
@@ -247,7 +253,7 @@
   </span>
 
 
-  <h2>
+  <h2 id="solution-analysis-heading">
     Analyse before solutioning.
   </h2>
 
@@ -327,9 +333,9 @@
       </h3>
 
       <p>
-        Define the information entities,
+        Define information entities,
         relationships and ownership
-        needed by the solution.
+        before shaping the technology response.
       </p>
 
     </article>
@@ -424,12 +430,13 @@
 
 
 <!-- ============================================================
-     ARCHITECTURE DOMAINS
+     ARCHITECTURE
      ============================================================ -->
 
 <section
   class="case-section"
   id="architecture"
+  aria-labelledby="architecture-heading"
 >
 
   <div class="case-copy">
@@ -439,15 +446,15 @@
     </span>
 
 
-    <h2>
+    <h2 id="architecture-heading">
       Connecting business, operations, information and technology.
     </h2>
 
 
     <p>
-      I use architecture as a way of making
+      I use architecture to make
       relationships, ownership and trade-offs visible —
-      not as an isolated technical exercise.
+      not as documentation for its own sake.
     </p>
 
   </div>
@@ -507,11 +514,11 @@
 
 
       <p>
-        The goal is to understand
+        The aim is to understand
         which part of the enterprise
         should own each responsibility
-        before introducing another tool,
-        workflow or integration.
+        before introducing another workflow,
+        integration or platform dependency.
       </p>
 
     </article>
@@ -546,7 +553,7 @@
 
         <p>
           Customer journeys,
-          operational workflows,
+          workflows,
           actors,
           hand-offs,
           controls
@@ -619,64 +626,78 @@
 
 
 <!-- ============================================================
-     CASE STUDIES
+     FEATURED INTEGRATION CASE
      ============================================================ -->
 
 <section
-  class="panel"
-  id="case-studies"
+  class="case-section"
+  aria-labelledby="featured-case-heading"
 >
 
-  <span class="section-kicker">
-    Selected Case Studies
-  </span>
+  <div class="case-copy">
+
+    <span class="section-kicker gold">
+      Featured Case
+    </span>
 
 
-  <h2>
-    Work across customer, operations and technology.
-  </h2>
+    <h2 id="featured-case-heading">
+      Universal Loan + Flowgear
+    </h2>
 
 
-  <div class="domain-grid">
+    <p>
+      A conceptual iPaaS extension of an existing banking
+      onboarding architecture, exploring how workflow,
+      services and systems can be separated through
+      clearer integration boundaries.
+    </p>
+
+  </div>
 
 
-    <!-- ========================================================
-         FLOWGEAR
-         ======================================================== -->
 
-    <article class="domain-card">
+  <div class="case-layout">
 
-      <span class="number">
-        Featured · Integration Architecture
+
+    <article class="featured-case">
+
+      <span class="case-status">
+        Integration Architecture · iPaaS
       </span>
 
 
       <h3>
-        Universal Loan + Flowgear
+        From onboarding workflow to orchestrated enterprise capability.
       </h3>
 
 
       <p>
-        A conceptual iPaaS extension of an existing banking
-        onboarding solution, exploring service orchestration,
-        API contracts, object modelling, data transformation,
-        system boundaries, exception handling
+        The case demonstrates service orchestration,
+        API contracts, object modelling,
+        transformation logic,
+        systems-of-record boundaries,
+        exception handling
         and a focused proof of concept.
       </p>
 
 
-      <div class="flow">
-
-        <span>
-          iPaaS
-        </span>
-
-        <span>
-          APIs
-        </span>
+      <div class="flow dark-flow">
 
         <span>
           Flowgear
+        </span>
+
+        <span>
+          REST APIs
+        </span>
+
+        <span>
+          OpenAPI
+        </span>
+
+        <span>
+          JSON
         </span>
 
         <span>
@@ -695,18 +716,132 @@
 
 
       <a
+        class="case-cta"
         href="customer-onboarding/flowgear-integration-extension.html"
       >
-        Explore Integration Architecture →
+        Explore Integration Architecture
+        <span aria-hidden="true">→</span>
       </a>
 
     </article>
 
 
 
-    <!-- ========================================================
-         UNIVERSAL LOAN
-         ======================================================== -->
+    <div class="roadmap">
+
+
+      <details open>
+
+        <summary>
+          Target Architecture
+        </summary>
+
+        <p>
+          Salesforce manages the operational workflow
+          while Flowgear conceptually coordinates
+          cross-system orchestration.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Object Model
+        </summary>
+
+        <p>
+          Customer, application,
+          product, document,
+          decision and case objects
+          are modelled independently of implementation technology.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Service Boundaries
+        </summary>
+
+        <p>
+          Eligibility,
+          compliance,
+          document,
+          credit and fulfilment capabilities
+          are treated as reusable services.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Exception Architecture
+        </summary>
+
+        <p>
+          Technical and business failures
+          are treated as explicit operational states
+          with recovery paths.
+        </p>
+
+      </details>
+
+
+
+      <details>
+
+        <summary>
+          Proposed POC
+        </summary>
+
+        <p>
+          A focused eligibility orchestration
+          proves the core integration pattern
+          before broader implementation.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CASE STUDIES
+     ============================================================ -->
+
+<section
+  class="panel"
+  id="case-studies"
+  aria-labelledby="case-studies-heading"
+>
+
+  <span class="section-kicker">
+    Selected Work
+  </span>
+
+
+  <h2 id="case-studies-heading">
+    Customer and operational transformation across banking.
+  </h2>
+
+
+  <div class="domain-grid">
+
 
     <article class="domain-card">
 
@@ -723,7 +858,7 @@
       <p>
         Reframing fragmented lending activity
         into a coherent onboarding capability
-        connecting product guidance,
+        across product guidance,
         eligibility,
         KYC/FICA,
         documents,
@@ -733,34 +868,7 @@
       </p>
 
 
-      <div class="flow">
-
-        <span>
-          Capability Mapping
-        </span>
-
-        <span>
-          Object Modelling
-        </span>
-
-        <span>
-          Process
-        </span>
-
-        <span>
-          Services
-        </span>
-
-        <span>
-          Solution Architecture
-        </span>
-
-      </div>
-
-
-      <a
-        href="customer-onboarding/index.html"
-      >
+      <a href="customer-onboarding/index.html">
         Explore Universal Loan →
       </a>
 
@@ -768,48 +876,64 @@
 
 
 
-    <!-- ========================================================
-         CUSTOMER SERVICING
-         ======================================================== -->
-
     <article class="domain-card">
 
       <span class="number">
-        Servicing · Operations
+        Integration · iPaaS
       </span>
 
 
       <h3>
-        Customer Servicing
+        Universal Loan + Flowgear
       </h3>
 
 
       <p>
-        Exploring how customer requests,
-        operational ownership,
-        service workflows
-        and system support
-        can be structured into
-        a more coherent servicing model.
+        Applying integration architecture
+        to the onboarding case through
+        orchestration,
+        API boundaries,
+        data transformation
+        and exception design.
       </p>
 
 
-      <a href="customer.servicing">
-        Explore Customer Servicing →
+      <a href="customer-onboarding/flowgear-integration-extension.html">
+        Explore Flowgear Architecture →
       </a>
 
     </article>
 
 
 
-    <!-- ========================================================
-         SALESFORCE ECOSYSTEM
-         ======================================================== -->
+    <article class="domain-card">
+
+      <span class="number">
+        Customer Servicing
+      </span>
+
+
+      <h3>
+        Servicing Architecture
+      </h3>
+
+
+      <p>
+        Connecting customer requests,
+        case management,
+        operational ownership
+        and service workflows
+        into a more coherent servicing model.
+      </p>
+
+    </article>
+
+
 
     <article class="domain-card">
 
       <span class="number">
-        Platform · Enterprise Servicing
+        Platform Transformation
       </span>
 
 
@@ -819,82 +943,60 @@
 
 
       <p>
-        Architecture and operating-model thinking
-        across lead management,
+        Banking capabilities across
+        lead management,
         case management,
-        relationship banking,
-        reusable experience patterns
-        and platform-enabled servicing.
+        onboarding,
+        servicing
+        and relationship banking.
       </p>
-
-
-      <a href="salesforce.banking.ecosystem">
-        Explore Salesforce Ecosystem →
-      </a>
 
     </article>
 
 
 
-    <!-- ========================================================
-         PAYMENTS
-         ======================================================== -->
-
     <article class="domain-card">
 
       <span class="number">
-        Payments · Operations
+        Payments Operations
       </span>
 
 
       <h3>
-        Payments Operations
+        Payments Architecture
       </h3>
 
 
       <p>
-        Mapping payment journeys
-        across customer intent,
+        Customer intent,
+        approvals,
         operational dependencies,
         exception scenarios
         and supporting systems.
       </p>
 
-
-      <a href="payments.operations">
-        Explore Payments Operations →
-      </a>
-
     </article>
 
 
 
-    <!-- ========================================================
-         FUTURE STATE
-         ======================================================== -->
-
     <article class="domain-card">
 
       <span class="number">
-        Enterprise · Future State
+        Future State
       </span>
 
 
       <h3>
-        Future-State Architecture
+        Capability & Operating Models
       </h3>
 
 
       <p>
-        Translating fragmented capabilities
-        into scalable future-state operating
-        and technology models.
+        Future-state views exploring
+        how fragmented customer
+        and operational capabilities
+        can evolve into more scalable enterprise models.
       </p>
-
-
-      <a href="future.state.architecture">
-        Explore Future State →
-      </a>
 
     </article>
 
@@ -915,12 +1017,12 @@
 >
 
   <span class="section-kicker">
-    Solution Consulting Lens
+    Solution Consulting
   </span>
 
 
   <h2 id="consulting-heading">
-    From customer problem to solution decision.
+    From ambiguity to implementable direction.
   </h2>
 
 
@@ -934,10 +1036,11 @@
       </h3>
 
       <p>
-        Understand the business problem,
-        systems landscape,
-        operating model,
-        constraints and desired outcome.
+        Understand the problem,
+        operating environment,
+        systems,
+        constraints
+        and desired outcome.
       </p>
 
     </article>
@@ -954,7 +1057,8 @@
         Map capabilities,
         workflows,
         information objects,
-        services and responsibilities.
+        services
+        and responsibilities.
       </p>
 
     </article>
@@ -969,10 +1073,9 @@
 
       <p>
         Define solution boundaries,
-        orchestration,
-        transformation,
-        exceptions
-        and governance.
+        service responsibilities,
+        integration patterns
+        and architecture decisions.
       </p>
 
     </article>
@@ -986,8 +1089,8 @@
       </h3>
 
       <p>
-        Use focused prototypes
-        and proofs of concept
+        Use prototypes
+        and focused proofs of concept
         to test the highest-risk assumptions.
       </p>
 
@@ -998,15 +1101,33 @@
     <article class="compact-card">
 
       <h3>
-        05 · Measure
+        05 · Deliver
       </h3>
 
       <p>
-        Evaluate reduced effort,
-        faster turnaround,
-        improved reuse,
-        lower coupling
-        and operational visibility.
+        Translate architecture
+        into requirements,
+        contracts,
+        workflows
+        and implementation direction.
+      </p>
+
+    </article>
+
+
+
+    <article class="compact-card">
+
+      <h3>
+        06 · Measure
+      </h3>
+
+      <p>
+        Evaluate customer value,
+        operational effort,
+        reuse,
+        risk
+        and sustainable change.
       </p>
 
     </article>
@@ -1025,6 +1146,7 @@
 <section
   class="panel"
   id="technical"
+  aria-labelledby="technical-heading"
 >
 
   <span class="section-kicker">
@@ -1032,13 +1154,13 @@
   </span>
 
 
-  <h2>
+  <h2 id="technical-heading">
     Enough engineering depth to challenge the solution.
   </h2>
 
 
   <p>
-    My technical background helps me reason
+    My software-engineering background helps me reason
     beyond requirements and interface design —
     into object structures,
     APIs,
@@ -1106,24 +1228,93 @@
 
 
 <!-- ============================================================
-     PRINCIPLES
+     ROLE ALIGNMENT
      ============================================================ -->
 
-<section class="case-section">
+<section
+  class="case-section"
+  aria-labelledby="role-alignment-heading"
+>
 
   <div class="case-copy">
 
     <span class="section-kicker gold">
-      Working Principles
+      Role Alignment
     </span>
 
 
-    <h2>
-      What I optimise for.
+    <h2 id="role-alignment-heading">
+      See how the evidence maps to a specific role.
     </h2>
+
+
+    <p>
+      The role-alignment view connects
+      job requirements directly to
+      relevant experience,
+      architecture artefacts
+      and explicit development gaps.
+    </p>
 
   </div>
 
+
+
+  <article class="featured-case">
+
+    <span class="case-status">
+      Evidence-Led Role Matching
+    </span>
+
+
+    <h3>
+      Senior Solutions Architect · Integration & Automation
+    </h3>
+
+
+    <p>
+      A dynamic mapping of
+      customer discovery,
+      solution architecture,
+      integration thinking,
+      technical fluency,
+      process modelling,
+      automation
+      and platform-specific ramp areas.
+    </p>
+
+
+    <a
+      class="case-cta"
+      href="role-alignment.html?role=chosen-senior-solutions-architect"
+    >
+      View Role Alignment
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </article>
+
+</section>
+
+
+
+<!-- ============================================================
+     PRINCIPLES
+     ============================================================ -->
+
+<section
+  class="panel"
+  aria-labelledby="principles-heading"
+>
+
+  <span class="section-kicker">
+    Working Principles
+  </span>
+
+
+  <h2 id="principles-heading">
+    What I optimise for.
+  </h2>
 
 
   <div class="compact-grid">
@@ -1132,13 +1323,12 @@
     <article class="compact-card">
 
       <h3>
-        Clarity before complexity
+        Capability before technology
       </h3>
 
       <p>
-        Make the problem,
-        ownership and trade-offs
-        visible before introducing technology.
+        Understand what must be achieved
+        before deciding what should implement it.
       </p>
 
     </article>
@@ -1152,9 +1342,9 @@
       </h3>
 
       <p>
-        Understand existing capabilities,
-        services and patterns
-        before creating new ones.
+        Existing enterprise capabilities
+        and services should be understood
+        before new ones are introduced.
       </p>
 
     </article>
@@ -1164,7 +1354,7 @@
     <article class="compact-card">
 
       <h3>
-        Exception paths are first-class
+        Exceptions are first-class
       </h3>
 
       <p>
@@ -1179,13 +1369,29 @@
     <article class="compact-card">
 
       <h3>
-        Customer + business value
+        Clear ownership
       </h3>
 
       <p>
-        Technology should improve
-        the customer experience
-        and the operating economics behind it.
+        Capabilities,
+        information,
+        workflows
+        and systems should have understandable responsibility.
+      </p>
+
+    </article>
+
+
+
+    <article class="compact-card">
+
+      <h3>
+        Customer + operational value
+      </h3>
+
+      <p>
+        Better customer experiences
+        should not depend on broken operating models.
       </p>
 
     </article>
@@ -1199,8 +1405,8 @@
       </h3>
 
       <p>
-        The target state must translate
-        into decisions teams can actually implement.
+        Target states should create
+        decisions teams can actually implement.
       </p>
 
     </article>
@@ -1236,8 +1442,8 @@
       </p>
 
       <p>
-        Connecting business capability,
-        customer value,
+        Connecting customer value,
+        business capability,
         operations,
         information
         and technology.
@@ -1267,6 +1473,10 @@
 
       <a href="#case-studies">
         Case Studies
+      </a>
+
+      <a href="role-alignment.html?role=chosen-senior-solutions-architect">
+        Role Alignment
       </a>
 
     </div>
@@ -1309,10 +1519,15 @@
         GitHub Repository
       </a>
 
+      <a href="https://linkedin.com/in/siyabonga-k-4043a017b">
+        LinkedIn
+      </a>
+
     </div>
 
 
   </div>
+
 
 
   <div class="footer-bottom">
