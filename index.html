@@ -21,7 +21,7 @@
 
   <link
     rel="stylesheet"
-    href="style.css?v=8"
+    href="style.css?v=9"
   >
 
 </head>
@@ -41,6 +41,7 @@
 
 <!-- ============================================================
      NAVIGATION
+     Global role selector is injected here automatically
      ============================================================ -->
 
 <nav
@@ -71,10 +72,6 @@
       Case Studies
     </a>
 
-    <a href="role-alignment.html?role=chosen-senior-solutions-architect">
-      Role Alignment
-    </a>
-
     <a href="#technical">
       Technical
     </a>
@@ -82,6 +79,20 @@
   </div>
 
 </nav>
+
+
+
+<!-- ============================================================
+     ACTIVE ROLE CONTEXT
+     Hidden when General Portfolio is selected
+     ============================================================ -->
+
+<div
+  class="role-context"
+  id="portfolio-role-context"
+  hidden
+>
+</div>
 
 
 
@@ -106,14 +117,17 @@
     <p>
       I work across customer, operations, product and technology —
       turning ambiguous problems into capability models,
-      service architectures, information structures,
-      integration boundaries and delivery-ready solution direction.
+      service architectures,
+      information structures,
+      integration boundaries
+      and delivery-ready solution direction.
     </p>
 
 
     <p>
       My background spans software engineering,
-      business analysis, experience and service design,
+      business analysis,
+      experience and service design,
       Salesforce-enabled transformation
       and regulated financial services.
     </p>
@@ -133,15 +147,7 @@
         class="button secondary"
         href="customer-onboarding/flowgear-integration-extension.html"
       >
-        View Flowgear Architecture
-      </a>
-
-
-      <a
-        class="button secondary"
-        href="role-alignment.html?role=chosen-senior-solutions-architect"
-      >
-        View Role Alignment
+        View Integration Architecture
       </a>
 
     </div>
@@ -156,7 +162,7 @@
 
 
 <!-- ============================================================
-     ABOUT
+     HOW I WORK
      ============================================================ -->
 
 <section
@@ -187,7 +193,7 @@
 
 
   <p>
-    That helps distinguish
+    This helps distinguish
     a customer-experience problem
     from a process problem,
     a process problem from an information problem,
@@ -275,7 +281,8 @@
         Understand the business objective,
         customer problem,
         operational pain,
-        constraints and intended outcome.
+        constraints
+        and intended outcome.
       </p>
 
     </article>
@@ -295,7 +302,7 @@
       <p>
         Identify what the organisation
         needs to be able to do
-        independent of current systems and interfaces.
+        independently of its current systems.
       </p>
 
     </article>
@@ -314,8 +321,10 @@
 
       <p>
         Understand work movement,
-        ownership, decisions,
-        hand-offs and exception paths.
+        ownership,
+        decisions,
+        hand-offs
+        and exception paths.
       </p>
 
     </article>
@@ -334,8 +343,9 @@
 
       <p>
         Define information entities,
-        relationships and ownership
-        before shaping the technology response.
+        relationships
+        and ownership
+        before shaping technology.
       </p>
 
     </article>
@@ -355,7 +365,7 @@
       <p>
         Review existing services,
         integration boundaries
-        and opportunities for reuse.
+        and reuse opportunities.
       </p>
 
     </article>
@@ -377,7 +387,7 @@
         configuration,
         automation,
         integration
-        and new-build approaches.
+        and new build.
       </p>
 
     </article>
@@ -396,8 +406,11 @@
 
       <p>
         Make trade-offs visible
-        across value, complexity,
-        risk, reuse and scalability.
+        across value,
+        complexity,
+        risk,
+        reuse
+        and scalability.
       </p>
 
     </article>
@@ -417,7 +430,9 @@
       <p>
         Convert the target state
         into implementation-ready requirements,
-        flows and decision artefacts.
+        contracts,
+        flows
+        and decision artefacts.
       </p>
 
     </article>
@@ -452,9 +467,11 @@
 
 
     <p>
-      I use architecture to make
-      relationships, ownership and trade-offs visible —
-      not as documentation for its own sake.
+      Architecture helps me make
+      relationships,
+      ownership
+      and trade-offs visible —
+      not create documentation for its own sake.
     </p>
 
   </div>
@@ -479,7 +496,7 @@
       <div class="flow dark-flow">
 
         <span>
-          Business Outcome
+          Outcome
         </span>
 
         <span>
@@ -514,11 +531,11 @@
 
 
       <p>
-        The aim is to understand
-        which part of the enterprise
-        should own each responsibility
+        The aim is to understand which part
+        of the enterprise should own each responsibility
         before introducing another workflow,
-        integration or platform dependency.
+        integration
+        or platform dependency.
       </p>
 
     </article>
@@ -626,7 +643,7 @@
 
 
 <!-- ============================================================
-     FEATURED INTEGRATION CASE
+     FEATURED CASE
      ============================================================ -->
 
 <section
@@ -637,7 +654,7 @@
   <div class="case-copy">
 
     <span class="section-kicker gold">
-      Featured Case
+      Featured Architecture Case
     </span>
 
 
@@ -647,10 +664,8 @@
 
 
     <p>
-      A conceptual iPaaS extension of an existing banking
-      onboarding architecture, exploring how workflow,
-      services and systems can be separated through
-      clearer integration boundaries.
+      Extending an existing banking onboarding solution
+      through an iPaaS architecture lens.
     </p>
 
   </div>
@@ -673,11 +688,12 @@
 
 
       <p>
-        The case demonstrates service orchestration,
-        API contracts, object modelling,
-        transformation logic,
-        systems-of-record boundaries,
-        exception handling
+        The case demonstrates
+        API boundaries,
+        service orchestration,
+        object modelling,
+        transformation,
+        exception architecture
         and a focused proof of concept.
       </p>
 
@@ -689,7 +705,7 @@
         </span>
 
         <span>
-          REST APIs
+          REST
         </span>
 
         <span>
@@ -706,10 +722,6 @@
 
         <span>
           SQL
-        </span>
-
-        <span>
-          Architecture-as-Code
         </span>
 
       </div>
@@ -737,9 +749,8 @@
         </summary>
 
         <p>
-          Salesforce manages the operational workflow
-          while Flowgear conceptually coordinates
-          cross-system orchestration.
+          Operational workflow separated
+          from cross-system orchestration.
         </p>
 
       </details>
@@ -753,10 +764,8 @@
         </summary>
 
         <p>
-          Customer, application,
-          product, document,
-          decision and case objects
-          are modelled independently of implementation technology.
+          Business information modelled independently
+          of current implementation technology.
         </p>
 
       </details>
@@ -773,8 +782,8 @@
           Eligibility,
           compliance,
           document,
-          credit and fulfilment capabilities
-          are treated as reusable services.
+          credit
+          and fulfilment as reusable services.
         </p>
 
       </details>
@@ -788,9 +797,9 @@
         </summary>
 
         <p>
-          Technical and business failures
-          are treated as explicit operational states
-          with recovery paths.
+          Failure states given
+          explicit ownership
+          and recovery pathways.
         </p>
 
       </details>
@@ -804,9 +813,8 @@
         </summary>
 
         <p>
-          A focused eligibility orchestration
-          proves the core integration pattern
-          before broader implementation.
+          Eligibility orchestration used
+          to prove the core integration pattern.
         </p>
 
       </details>
@@ -821,7 +829,7 @@
 
 
 <!-- ============================================================
-     CASE STUDIES
+     SELECTED WORK
      ============================================================ -->
 
 <section
@@ -846,7 +854,7 @@
     <article class="domain-card">
 
       <span class="number">
-        Customer Onboarding · Solution Architecture
+        Solution Architecture
       </span>
 
 
@@ -856,12 +864,11 @@
 
 
       <p>
-        Reframing fragmented lending activity
-        into a coherent onboarding capability
-        across product guidance,
+        Lending onboarding across
+        product guidance,
         eligibility,
         KYC/FICA,
-        documents,
+        documentation,
         credit,
         fulfilment
         and servicing readiness.
@@ -879,7 +886,7 @@
     <article class="domain-card">
 
       <span class="number">
-        Integration · iPaaS
+        Integration Architecture
       </span>
 
 
@@ -889,12 +896,10 @@
 
 
       <p>
-        Applying integration architecture
-        to the onboarding case through
-        orchestration,
-        API boundaries,
+        iPaaS orchestration,
+        service boundaries,
         data transformation
-        and exception design.
+        and exception architecture.
       </p>
 
 
@@ -919,11 +924,10 @@
 
 
       <p>
-        Connecting customer requests,
+        Customer requests,
         case management,
         operational ownership
-        and service workflows
-        into a more coherent servicing model.
+        and service workflow design.
       </p>
 
     </article>
@@ -943,8 +947,7 @@
 
 
       <p>
-        Banking capabilities across
-        lead management,
+        Lead management,
         case management,
         onboarding,
         servicing
@@ -971,7 +974,7 @@
         Customer intent,
         approvals,
         operational dependencies,
-        exception scenarios
+        exceptions
         and supporting systems.
       </p>
 
@@ -992,10 +995,10 @@
 
 
       <p>
-        Future-state views exploring
-        how fragmented customer
-        and operational capabilities
-        can evolve into more scalable enterprise models.
+        Future-state models for
+        more coherent,
+        reusable
+        and scalable enterprise capability.
       </p>
 
     </article>
@@ -1028,7 +1031,6 @@
 
   <div class="compact-grid">
 
-
     <article class="compact-card">
 
       <h3>
@@ -1038,13 +1040,11 @@
       <p>
         Understand the problem,
         operating environment,
-        systems,
         constraints
         and desired outcome.
       </p>
 
     </article>
-
 
 
     <article class="compact-card">
@@ -1056,13 +1056,12 @@
       <p>
         Map capabilities,
         workflows,
-        information objects,
+        information,
         services
-        and responsibilities.
+        and ownership.
       </p>
 
     </article>
-
 
 
     <article class="compact-card">
@@ -1073,13 +1072,12 @@
 
       <p>
         Define solution boundaries,
-        service responsibilities,
-        integration patterns
-        and architecture decisions.
+        responsibilities,
+        patterns
+        and trade-offs.
       </p>
 
     </article>
-
 
 
     <article class="compact-card">
@@ -1090,12 +1088,11 @@
 
       <p>
         Use prototypes
-        and focused proofs of concept
-        to test the highest-risk assumptions.
+        and POCs
+        to reduce uncertainty.
       </p>
 
     </article>
-
 
 
     <article class="compact-card">
@@ -1106,14 +1103,10 @@
 
       <p>
         Translate architecture
-        into requirements,
-        contracts,
-        workflows
-        and implementation direction.
+        into implementation-ready direction.
       </p>
 
     </article>
-
 
 
     <article class="compact-card">
@@ -1124,14 +1117,13 @@
 
       <p>
         Evaluate customer value,
-        operational effort,
-        reuse,
-        risk
+        efficiency,
+        risk,
+        reuse
         and sustainable change.
       </p>
 
     </article>
-
 
   </div>
 
@@ -1160,11 +1152,11 @@
 
 
   <p>
-    My software-engineering background helps me reason
+    My software-engineering foundation lets me work
     beyond requirements and interface design —
-    into object structures,
+    into objects,
     APIs,
-    database behaviour,
+    data,
     system dependencies,
     integration constraints
     and implementation feasibility.
@@ -1206,7 +1198,7 @@
     </div>
 
     <div class="technical-pill">
-      Object-Oriented Design
+      Object Modelling
     </div>
 
     <div class="technical-pill">
@@ -1220,197 +1212,6 @@
     <div class="technical-pill">
       Flowgear Study
     </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     ROLE ALIGNMENT
-     ============================================================ -->
-
-<section
-  class="case-section"
-  aria-labelledby="role-alignment-heading"
->
-
-  <div class="case-copy">
-
-    <span class="section-kicker gold">
-      Role Alignment
-    </span>
-
-
-    <h2 id="role-alignment-heading">
-      See how the evidence maps to a specific role.
-    </h2>
-
-
-    <p>
-      The role-alignment view connects
-      job requirements directly to
-      relevant experience,
-      architecture artefacts
-      and explicit development gaps.
-    </p>
-
-  </div>
-
-
-
-  <article class="featured-case">
-
-    <span class="case-status">
-      Evidence-Led Role Matching
-    </span>
-
-
-    <h3>
-      Senior Solutions Architect · Integration & Automation
-    </h3>
-
-
-    <p>
-      A dynamic mapping of
-      customer discovery,
-      solution architecture,
-      integration thinking,
-      technical fluency,
-      process modelling,
-      automation
-      and platform-specific ramp areas.
-    </p>
-
-
-    <a
-      class="case-cta"
-      href="role-alignment.html?role=chosen-senior-solutions-architect"
-    >
-      View Role Alignment
-      <span aria-hidden="true">→</span>
-    </a>
-
-  </article>
-
-</section>
-
-
-
-<!-- ============================================================
-     PRINCIPLES
-     ============================================================ -->
-
-<section
-  class="panel"
-  aria-labelledby="principles-heading"
->
-
-  <span class="section-kicker">
-    Working Principles
-  </span>
-
-
-  <h2 id="principles-heading">
-    What I optimise for.
-  </h2>
-
-
-  <div class="compact-grid">
-
-
-    <article class="compact-card">
-
-      <h3>
-        Capability before technology
-      </h3>
-
-      <p>
-        Understand what must be achieved
-        before deciding what should implement it.
-      </p>
-
-    </article>
-
-
-
-    <article class="compact-card">
-
-      <h3>
-        Reuse before duplication
-      </h3>
-
-      <p>
-        Existing enterprise capabilities
-        and services should be understood
-        before new ones are introduced.
-      </p>
-
-    </article>
-
-
-
-    <article class="compact-card">
-
-      <h3>
-        Exceptions are first-class
-      </h3>
-
-      <p>
-        A solution is incomplete
-        if it only explains the happy path.
-      </p>
-
-    </article>
-
-
-
-    <article class="compact-card">
-
-      <h3>
-        Clear ownership
-      </h3>
-
-      <p>
-        Capabilities,
-        information,
-        workflows
-        and systems should have understandable responsibility.
-      </p>
-
-    </article>
-
-
-
-    <article class="compact-card">
-
-      <h3>
-        Customer + operational value
-      </h3>
-
-      <p>
-        Better customer experiences
-        should not depend on broken operating models.
-      </p>
-
-    </article>
-
-
-
-    <article class="compact-card">
-
-      <h3>
-        Architecture must enable delivery
-      </h3>
-
-      <p>
-        Target states should create
-        decisions teams can actually implement.
-      </p>
-
-    </article>
-
 
   </div>
 
@@ -1475,10 +1276,6 @@
         Case Studies
       </a>
 
-      <a href="role-alignment.html?role=chosen-senior-solutions-architect">
-        Role Alignment
-      </a>
-
     </div>
 
 
@@ -1508,15 +1305,11 @@
     <div class="footer-column">
 
       <h4>
-        Technical
+        Connect
       </h4>
 
-      <a href="#technical">
-        Engineering Foundation
-      </a>
-
       <a href="https://github.com/cKhanyi/customer-operations-transformation">
-        GitHub Repository
+        GitHub
       </a>
 
       <a href="https://linkedin.com/in/siyabonga-k-4043a017b">
@@ -1527,7 +1320,6 @@
 
 
   </div>
-
 
 
   <div class="footer-bottom">
@@ -1543,6 +1335,24 @@
   </div>
 
 </footer>
+
+
+
+<!-- ============================================================
+     GLOBAL ROLE TAILORING
+     role data must load before the switcher
+     ============================================================ -->
+
+<script
+  src="role-alignment-data.js"
+  defer
+></script>
+
+
+<script
+  src="portfolio-role-switcher.js"
+  defer
+></script>
 
 
 </body>
